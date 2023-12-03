@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .redirect-web {
+            text-decoration: none;
+            font-size: 14px;
+            color: black !important;
+            border: 1px solid black;
+            padding: 10px;
+
+        }
+
+
+        .m-product-cart-table-body-img > img {
+            width: 7rem;
+            height: 8rem;
+            object-fit: contain;
+        }
+
+        .table td, .table th {
+            vertical-align: middle;
+        }
+
+        .btn-spe {
+            margin-right: 5px;
+            background-color: #fff;
+            border: 1px solid rgba(0, 0, 0, 0.98);
+        }
+    </style>
+</head>
+<body>
+<div style="width: 100%">
+    <div style="width: 50%; margin: auto;">
+        <div class="header" style="width: 100%;display: flex;">
+            <div style="width: 50%">
+                <span style="font-size: 18px; color: black; font-weight: bold;">Đại Dương</span>
+            </div>
+            <div style="width: 50%; text-align: end">
+                <span style="font-size: 18px; color: rgba(147,147,147,0.76);"
+                      th:utext="${'Đơn Hàng #'+bill.billCode}"></span>
+            </div>
+        </div>
+        <div>
+            <div>
+                <h3>Cám ơn <span style="font-weight: bold" th:utext="${bill.fullName}"></span> đã mua hàng! </h3>
+            </div>
+            <div style="font-size: 14px;">
+                Chúng tôi đã nhận được đặt hàng của bạn và đã sẵn sàng để vận chuyển.
+            </div>
+        </div>
+
+        <hr>
+        <div>
+            <div><h3>Thông tin đơn hàng</h3></div>
+            <div style="width: 100%">
+                <table class="table-list-product">
+                    <th:block th:each="e : ${ bill.listDetail}">
+                        <tr>
+                            <td style="width: 10%">
+                                <div class="m-product-cart-table-body-img">
+                                    <img th:src="${e.img}">
+                                </div>
+
+                            </td>
+                            <td style="width: 40%">
+                                <h4 th:utext="${e.productName}"></h4>
+                            </td>
+                            <td style="width: 20%"
+                                th:utext="' '+${#numbers.formatDecimal(e.priceSell, 0, 'POINT', 0, 'POINT')}+ ' VND'"></td>
+                            <td style="width: 10%" th:utext="'x '+${e.quantity}"></td>
+                            <td style="width: 20%"
+                                th:utext="' '+${#numbers.formatDecimal(e.totalPrice, 0, 'POINT', 0, 'POINT')}+ ' VND'"></td>
+                        </tr>
+                    </th:block>
+
+
+                </table>
+            </div>
+            <hr>
+            <div style="width: 100%;  ">
+                <div style="width: 100%; text-align: end">
+                    <th:block th:if="${bill.payment == 1}">
+                        <p>Tổng tiền: <span style="font-weight: bold"
+                                            th:utext="' '+${#numbers.formatDecimal(bill.totalPrice, 0, 'POINT', 0, 'POINT')}+ ' VND'"></span>
+                        </p>
+                    </th:block>
+                    <th:block th:if="${bill.payment == 2}">
+                        <p>Tổng tiền: <span style="font-weight: bold"
+                                            th:utext="' '+${#numbers.formatDecimal(0, 0, 'POINT', 0, 'POINT')}+ ' VND (Đã thanh toán)'"></span>
+                        </p>
+                    </th:block>
+                </div>
+            </div>
+            <hr>
+        </div>
+        <div style="width: 100%">
+            <div><h3>Thông tin khác hàng</h3></div>
+            <div style="width: 50%">
+                <p>Khách hàng: <span th:utext="${bill.fullName}"></span></p>
+            </div>
+            <div style="width: 50%">
+                <p>Số điện thoại: <span th:utext="${bill.phone}"></span></p>
+
+            </div>
+            <div style="width: 50%">
+                <p>Địa chỉ nhập hàng: <span th:utext="${bill.address}"></span></p>
+            </div>
+            <div style="width: 50%">
+                <p>Phương thức thanh toán: <span
+                        th:utext="${bill.payment == 2 ? 'Thanh toán qua VNPAY': 'Thanh toán khi nhận hàng'}"></span>
+                </p>
+            </div>
+        </div>
+        <hr>
+        <div style="width: 100%; text-align: center">
+            <p>
+                Liên lạc với chúng tôi tại <a href="/">shop.clothes.sanho@gmail.com</a> hoặc 097588888
+            </p>
+        </div>
+    </div>
+</div>
+</body>
+</html>

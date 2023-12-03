@@ -1,0 +1,2225 @@
+[
+  {
+    "id": 0,
+    "country": "Afghanistan",
+    "countryCode": "AF",
+    "dialCode": "+93",
+    "numOfInvestor": 0,
+    "numOfTransaction": 0,
+    "totalTransactionAmount": 0.00
+  },
+  {
+    "id": 0,
+    "country": "Åland Islands",
+    "countryCode": "AX",
+    "dialCode": "+358",
+    "numOfInvestor": 0,
+    "numOfTransaction": 0,
+    "totalTransactionAmount": 0.00
+  },
+  {
+    "id": 0,
+    "country": "Albania",
+    "countryCode": "AL",
+    "dialCode": "+355",
+    "numOfInvestor": 0,
+    "numOfTransaction": 0,
+    "totalTransactionAmount": 0.00
+  },
+  {
+    "id": 0,
+    "country": "Algeria",
+    "countryCode": "DZ",
+    "dialCode": "+213",
+    "numOfInvestor": 0,
+    "numOfTransaction": 0,
+    "totalTransactionAmount": 0.00
+  },
+  {
+    "id": 0,
+    "country": "American Samoa",
+    "countryCode": "AS",
+    "dialCode": "+1684",
+    "numOfInvestor": 0,
+    "numOfTransaction": 0,
+    "totalTransactionAmount": 0.00
+  },
+  {
+    "id": 0,
+    "country": "Andorra",
+    "countryCode": "AD",
+    "dialCode": "+376",
+    "numOfInvestor": 0,
+    "numOfTransaction": 0,
+    "totalTransactionAmount": 0.00
+  },
+  {
+    "id": 0,
+    "country": "Angola",
+    "countryCode": "AO",
+    "dialCode": "+244",
+    "numOfInvestor": 0,
+    "numOfTransaction": 0,
+    "totalTransactionAmount": 0.00
+  },
+  {
+    "id": 0,
+    "country": "Anguilla",
+    "countryCode": "AI",
+    "dialCode": "+1264",
+    "numOfInvestor": 0,
+    "numOfTransaction": 0,
+    "totalTransactionAmount": 0.00
+  },
+  {
+    "id": 0,
+    "country": "Antarctica",
+    "countryCode": "AQ",
+    "dialCode": "+672",
+    "numOfInvestor": 0,
+    "numOfTransaction": 0,
+    "totalTransactionAmount": 0.00
+  },
+  {
+    "id": 0,
+    "country": "Antigua and Barbuda",
+    "countryCode": "AG",
+    "dialCode": "+1268",
+    "numOfInvestor": 0,
+    "numOfTransaction": 0,
+    "totalTransactionAmount": 0.00
+  },
+  {
+    "id": 0,
+    "country": "Argentina",
+    "countryCode": "AR",
+    "dialCode": "+54",
+    "numOfInvestor": 0,
+    "numOfTransaction": 0,
+    "totalTransactionAmount": 0.00
+  },
+  {
+    "id": 0,
+    "country": "Armenia",
+    "countryCode": "AM",
+    "dialCode": "+374",
+    "numOfInvestor": 0,
+    "numOfTransaction": 0,
+    "totalTransactionAmount": 0.00
+  },
+  {
+    "id": 0,
+    "country": "Aruba",
+    "countryCode": "AW",
+    "dialCode": "+297",
+    "numOfInvestor": 0,
+    "numOfTransaction": 0,
+    "totalTransactionAmount": 0.00
+  },
+  {
+    "id": 0,
+    "country": "Australia",
+    "countryCode": "AU",
+    "dialCode": "+61",
+    "numOfInvestor": 0,
+    "numOfTransaction": 0,
+    "totalTransactionAmount": 0.00
+  },
+  {
+    "id": 0,
+    "country": "Austria",
+    "countryCode": "AT",
+    "dialCode": "+43",
+    "numOfInvestor": 0,
+    "numOfTransaction": 0,
+    "totalTransactionAmount": 0.00
+  },
+  {
+    "id": 0,
+    "country": "Azerbaijan",
+    "countryCode": "AZ",
+    "dialCode": "+994",
+    "numOfInvestor": 0,
+    "numOfTransaction": 0,
+    "totalTransactionAmount": 0.00
+  },
+  {
+    "id": 0,
+    "country": "Bahamas",
+    "countryCode": "BS",
+    "dialCode": "+1242",
+    "numOfInvestor": 0,
+    "numOfTransaction": 0,
+    "totalTransactionAmount": 0.00
+  },
+  {
+    "id": 0,
+    "country": "Bahrain",
+    "countryCode": "BH",
+    "dialCode": "+973",
+    "numOfInvestor": 0,
+    "numOfTransaction": 0,
+    "totalTransactionAmount": 0.00
+  },
+  {
+    "id": 0,
+    "country": "Bangladesh",
+    "countryCode": "BD",
+    "dialCode": "+880",
+    "numOfInvestor": 0,
+    "numOfTransaction": 0,
+    "totalTransactionAmount": 0.00
+  },
+  {
+    "id": 0,
+    "country": "Barbados",
+    "countryCode": "BB",
+    "dialCode": "+1246",
+    "numOfInvestor": 0,
+    "numOfTransaction": 0,
+    "totalTransactionAmount": 0.00
+  },
+  {
+    "id": 0,
+    "country": "Belarus",
+    "countryCode": "BY",
+    "dialCode": "+375",
+    "numOfInvestor": 0,
+    "numOfTransaction": 0,
+    "totalTransactionAmount": 0.00
+  },
+  {
+    "id": 0,
+    "country": "Belgium",
+    "countryCode": "BE",
+    "dialCode": "+32",
+    "numOfInvestor": 0,
+    "numOfTransaction": 0,
+    "totalTransactionAmount": 0.00
+  },
+  {
+    "id": 0,
+    "country": "Belize",
+    "countryCode": "BZ",
+    "dialCode": "+501",
+    "numOfInvestor": 0,
+    "numOfTransaction": 0,
+    "totalTransactionAmount": 0.00
+  },
+  {
+    "id": 0,
+    "country": "Benin",
+    "countryCode": "BJ",
+    "dialCode": "+229",
+    "numOfInvestor": 0,
+    "numOfTransaction": 0,
+    "totalTransactionAmount": 0.00
+  },
+  {
+    "id": 0,
+    "country": "Bermuda",
+    "countryCode": "BM",
+    "dialCode": "+1441",
+    "numOfInvestor": 0,
+    "numOfTransaction": 0,
+    "totalTransactionAmount": 0.00
+  },
+  {
+    "id": 0,
+    "country": "Bhutan",
+    "countryCode": "BT",
+    "dialCode": "+975",
+    "numOfInvestor": 0,
+    "numOfTransaction": 0,
+    "totalTransactionAmount": 0.00
+  },
+  {
+    "id": 0,
+    "country": "Bolivia",
+    "countryCode": "BO",
+    "dialCode": "+591",
+    "numOfInvestor": 0,
+    "numOfTransaction": 0,
+    "totalTransactionAmount": 0.00
+  },
+  {
+    "id": 0,
+    "country": "Bosnia and Herzegovina",
+    "countryCode": "BA",
+    "dialCode": "+387",
+    "numOfInvestor": 0,
+    "numOfTransaction": 0,
+    "totalTransactionAmount": 0.00
+  },
+  {
+    "id": 0,
+    "country": "Botswana",
+    "countryCode": "BW",
+    "dialCode": "+267",
+    "numOfInvestor": 0,
+    "numOfTransaction": 0,
+    "totalTransactionAmount": 0.00
+  },
+  {
+    "id": 0,
+    "country": "Bouvet Island",
+    "countryCode": "BV",
+    "dialCode": "+47",
+    "numOfInvestor": 0,
+    "numOfTransaction": 0,
+    "totalTransactionAmount": 0.00
+  },
+  {
+    "id": 0,
+    "country": "Brasil",
+    "countryCode": "BR",
+    "dialCode": "+55",
+    "numOfInvestor": 0,
+    "numOfTransaction": 0,
+    "totalTransactionAmount": 0.00
+  },
+  {
+    "id": 0,
+    "country": "British Indian Ocean Territory",
+    "countryCode": "IO",
+    "dialCode": "+246",
+    "numOfInvestor": 0,
+    "numOfTransaction": 0,
+    "totalTransactionAmount": 0.00
+  },
+  {
+    "id": 0,
+    "country": "Negara Brunei Darussalam",
+    "countryCode": "BN",
+    "dialCode": "+673",
+    "numOfInvestor": 0,
+    "numOfTransaction": 0,
+    "totalTransactionAmount": 0.00
+  },
+  {
+    "id": 0,
+    "country": "Bulgaria",
+    "countryCode": "BG",
+    "dialCode": "+359",
+    "numOfInvestor": 0,
+    "numOfTransaction": 0,
+    "totalTransactionAmount": 0.00
+  },
+  {
+    "id": 0,
+    "country": "Burkina Faso",
+    "countryCode": "BF",
+    "dialCode": "+226",
+    "numOfInvestor": 0,
+    "numOfTransaction": 0,
+    "totalTransactionAmount": 0.00
+  },
+  {
+    "id": 0,
+    "country": "Burundi",
+    "countryCode": "BI",
+    "dialCode": "+257",
+    "numOfInvestor": 0,
+    "numOfTransaction": 0,
+    "totalTransactionAmount": 0.00
+  },
+  {
+    "id": 0,
+    "country": "Cambodia",
+    "countryCode": "KH",
+    "dialCode": "+855",
+    "numOfInvestor": 0,
+    "numOfTransaction": 0,
+    "totalTransactionAmount": 0.00
+  },
+  {
+    "id": 0,
+    "country": "Cameroon",
+    "countryCode": "CM",
+    "dialCode": "+237",
+    "numOfInvestor": 0,
+    "numOfTransaction": 0,
+    "totalTransactionAmount": 0.00
+  },
+  {
+    "id": 0,
+    "country": "Canada",
+    "countryCode": "CA",
+    "dialCode": "+1",
+    "numOfInvestor": 0,
+    "numOfTransaction": 0,
+    "totalTransactionAmount": 0.00
+  },
+  {
+    "id": 0,
+    "country": "Cabo Verde",
+    "countryCode": "CV",
+    "dialCode": "+238",
+    "numOfInvestor": 0,
+    "numOfTransaction": 0,
+    "totalTransactionAmount": 0.00
+  },
+  {
+    "id": 0,
+    "country": "Cayman Islands",
+    "countryCode": "KY",
+    "dialCode": "+1345",
+    "numOfInvestor": 0,
+    "numOfTransaction": 0,
+    "totalTransactionAmount": 0.00
+  },
+  {
+    "id": 0,
+    "country": "Central African Republic",
+    "countryCode": "CF",
+    "dialCode": "+236",
+    "numOfInvestor": 0,
+    "numOfTransaction": 0,
+    "totalTransactionAmount": 0.00
+  },
+  {
+    "id": 0,
+    "country": "Chad",
+    "countryCode": "TD",
+    "dialCode": "+235",
+    "numOfInvestor": 0,
+    "numOfTransaction": 0,
+    "totalTransactionAmount": 0.00
+  },
+  {
+    "id": 0,
+    "country": "Chile",
+    "countryCode": "CL",
+    "dialCode": "+56",
+    "numOfInvestor": 0,
+    "numOfTransaction": 0,
+    "totalTransactionAmount": 0.00
+  },
+  {
+    "id": 0,
+    "country": "China",
+    "countryCode": "CN",
+    "dialCode": "+86",
+    "numOfInvestor": 0,
+    "numOfTransaction": 0,
+    "totalTransactionAmount": 0.00
+  },
+  {
+    "id": 0,
+    "country": "Christmas Island",
+    "countryCode": "CX",
+    "dialCode": "+61",
+    "numOfInvestor": 0,
+    "numOfTransaction": 0,
+    "totalTransactionAmount": 0.00
+  },
+  {
+    "id": 0,
+    "country": "Cocos (Keeling) Islands",
+    "countryCode": "CC",
+    "dialCode": "+61",
+    "numOfInvestor": 0,
+    "numOfTransaction": 0,
+    "totalTransactionAmount": 0.00
+  },
+  {
+    "id": 0,
+    "country": "Colombia",
+    "countryCode": "CO",
+    "dialCode": "+57",
+    "numOfInvestor": 0,
+    "numOfTransaction": 0,
+    "totalTransactionAmount": 0.00
+  },
+  {
+    "id": 0,
+    "country": "Komori",
+    "countryCode": "KM",
+    "dialCode": "+269",
+    "numOfInvestor": 0,
+    "numOfTransaction": 0,
+    "totalTransactionAmount": 0.00
+  },
+  {
+    "id": 0,
+    "country": "Congo",
+    "countryCode": "CG",
+    "dialCode": "+242",
+    "numOfInvestor": 0,
+    "numOfTransaction": 0,
+    "totalTransactionAmount": 0.00
+  },
+  {
+    "id": 0,
+    "country": "Congo, the Democratic Republic of the",
+    "countryCode": "CD",
+    "dialCode": "+243",
+    "numOfInvestor": 0,
+    "numOfTransaction": 0,
+    "totalTransactionAmount": 0.00
+  },
+  {
+    "id": 0,
+    "country": "Cook Islands",
+    "countryCode": "CK",
+    "dialCode": "+682",
+    "numOfInvestor": 0,
+    "numOfTransaction": 0,
+    "totalTransactionAmount": 0.00
+  },
+  {
+    "id": 0,
+    "country": "Costa Rica",
+    "countryCode": "CR",
+    "dialCode": "+506",
+    "numOfInvestor": 0,
+    "numOfTransaction": 0,
+    "totalTransactionAmount": 0.00
+  },
+  {
+    "id": 0,
+    "country": "Cote D'Ivoire",
+    "countryCode": "CI",
+    "dialCode": "+225",
+    "numOfInvestor": 0,
+    "numOfTransaction": 0,
+    "totalTransactionAmount": 0.00
+  },
+  {
+    "id": 0,
+    "country": "Croatia",
+    "countryCode": "HR",
+    "dialCode": "+385",
+    "numOfInvestor": 0,
+    "numOfTransaction": 0,
+    "totalTransactionAmount": 0.00
+  },
+  {
+    "id": 0,
+    "country": "Cuba",
+    "countryCode": "CU",
+    "dialCode": "+53",
+    "numOfInvestor": 0,
+    "numOfTransaction": 0,
+    "totalTransactionAmount": 0.00
+  },
+  {
+    "id": 0,
+    "country": "Cyprus",
+    "countryCode": "CY",
+    "dialCode": "+357",
+    "numOfInvestor": 0,
+    "numOfTransaction": 0,
+    "totalTransactionAmount": 0.00
+  },
+  {
+    "id": 0,
+    "country": "Czech Republic",
+    "countryCode": "CZ",
+    "dialCode": "+420",
+    "numOfInvestor": 0,
+    "numOfTransaction": 0,
+    "totalTransactionAmount": 0.00
+  },
+  {
+    "id": 0,
+    "country": "Denmark",
+    "countryCode": "DK",
+    "dialCode": "+45",
+    "numOfInvestor": 0,
+    "numOfTransaction": 0,
+    "totalTransactionAmount": 0.00
+  },
+  {
+    "id": 0,
+    "country": "Djibouti",
+    "countryCode": "DJ",
+    "dialCode": "+253",
+    "numOfInvestor": 0,
+    "numOfTransaction": 0,
+    "totalTransactionAmount": 0.00
+  },
+  {
+    "id": 0,
+    "country": "Dominica",
+    "countryCode": "DM",
+    "dialCode": "+1767",
+    "numOfInvestor": 0,
+    "numOfTransaction": 0,
+    "totalTransactionAmount": 0.00
+  },
+  {
+    "id": 0,
+    "country": "Dominican Republic",
+    "countryCode": "DO",
+    "dialCode": "+1",
+    "numOfInvestor": 0,
+    "numOfTransaction": 0,
+    "totalTransactionAmount": 0.00
+  },
+  {
+    "id": 0,
+    "country": "Ecuador",
+    "countryCode": "EC",
+    "dialCode": "+593",
+    "numOfInvestor": 0,
+    "numOfTransaction": 0,
+    "totalTransactionAmount": 0.00
+  },
+  {
+    "id": 0,
+    "country": "Egypt",
+    "countryCode": "EG",
+    "dialCode": "+20",
+    "numOfInvestor": 0,
+    "numOfTransaction": 0,
+    "totalTransactionAmount": 0.00
+  },
+  {
+    "id": 0,
+    "country": "El Salvador",
+    "countryCode": "SV",
+    "dialCode": "+503",
+    "numOfInvestor": 0,
+    "numOfTransaction": 0,
+    "totalTransactionAmount": 0.00
+  },
+  {
+    "id": 0,
+    "country": "Equatorial Guinea",
+    "countryCode": "GQ",
+    "dialCode": "+240",
+    "numOfInvestor": 0,
+    "numOfTransaction": 0,
+    "totalTransactionAmount": 0.00
+  },
+  {
+    "id": 0,
+    "country": "Eritrea",
+    "countryCode": "ER",
+    "dialCode": "+291",
+    "numOfInvestor": 0,
+    "numOfTransaction": 0,
+    "totalTransactionAmount": 0.00
+  },
+  {
+    "id": 0,
+    "country": "Estonia",
+    "countryCode": "EE",
+    "dialCode": "+372",
+    "numOfInvestor": 0,
+    "numOfTransaction": 0,
+    "totalTransactionAmount": 0.00
+  },
+  {
+    "id": 0,
+    "country": "Ethiopia",
+    "countryCode": "ET",
+    "dialCode": "+251",
+    "numOfInvestor": 0,
+    "numOfTransaction": 0,
+    "totalTransactionAmount": 0.00
+  },
+  {
+    "id": 0,
+    "country": "Falkland Islands (Malvinas)",
+    "countryCode": "FK",
+    "dialCode": "+500",
+    "numOfInvestor": 0,
+    "numOfTransaction": 0,
+    "totalTransactionAmount": 0.00
+  },
+  {
+    "id": 0,
+    "country": "Faroe Islands",
+    "countryCode": "FO",
+    "dialCode": "+298",
+    "numOfInvestor": 0,
+    "numOfTransaction": 0,
+    "totalTransactionAmount": 0.00
+  },
+  {
+    "id": 0,
+    "country": "Fiji",
+    "countryCode": "FJ",
+    "dialCode": "+679",
+    "numOfInvestor": 0,
+    "numOfTransaction": 0,
+    "totalTransactionAmount": 0.00
+  },
+  {
+    "id": 0,
+    "country": "Finland",
+    "countryCode": "FI",
+    "dialCode": "+358",
+    "numOfInvestor": 0,
+    "numOfTransaction": 0,
+    "totalTransactionAmount": 0.00
+  },
+  {
+    "id": 0,
+    "country": "France",
+    "countryCode": "FR",
+    "dialCode": "+33",
+    "numOfInvestor": 0,
+    "numOfTransaction": 0,
+    "totalTransactionAmount": 0.00
+  },
+  {
+    "id": 0,
+    "country": "French Guiana",
+    "countryCode": "GF",
+    "dialCode": "+594",
+    "numOfInvestor": 0,
+    "numOfTransaction": 0,
+    "totalTransactionAmount": 0.00
+  },
+  {
+    "id": 0,
+    "country": "French Polynesia",
+    "countryCode": "PF",
+    "dialCode": "+689",
+    "numOfInvestor": 0,
+    "numOfTransaction": 0,
+    "totalTransactionAmount": 0.00
+  },
+  {
+    "id": 0,
+    "country": "French Southern Territories",
+    "countryCode": "TF",
+    "dialCode": "+262",
+    "numOfInvestor": 0,
+    "numOfTransaction": 0,
+    "totalTransactionAmount": 0.00
+  },
+  {
+    "id": 0,
+    "country": "Gabon",
+    "countryCode": "GA",
+    "dialCode": "+241",
+    "numOfInvestor": 0,
+    "numOfTransaction": 0,
+    "totalTransactionAmount": 0.00
+  },
+  {
+    "id": 0,
+    "country": "Gambia",
+    "countryCode": "GM",
+    "dialCode": "+220",
+    "numOfInvestor": 0,
+    "numOfTransaction": 0,
+    "totalTransactionAmount": 0.00
+  },
+  {
+    "id": 0,
+    "country": "Georgia",
+    "countryCode": "GE",
+    "dialCode": "+995",
+    "numOfInvestor": 0,
+    "numOfTransaction": 0,
+    "totalTransactionAmount": 0.00
+  },
+  {
+    "id": 0,
+    "country": "Germany",
+    "countryCode": "DE",
+    "dialCode": "+49",
+    "numOfInvestor": 0,
+    "numOfTransaction": 0,
+    "totalTransactionAmount": 0.00
+  },
+  {
+    "id": 0,
+    "country": "Ghana",
+    "countryCode": "GH",
+    "dialCode": "+233",
+    "numOfInvestor": 0,
+    "numOfTransaction": 0,
+    "totalTransactionAmount": 0.00
+  },
+  {
+    "id": 0,
+    "country": "Gibraltar",
+    "countryCode": "GI",
+    "dialCode": "+350",
+    "numOfInvestor": 0,
+    "numOfTransaction": 0,
+    "totalTransactionAmount": 0.00
+  },
+  {
+    "id": 0,
+    "country": "Greece",
+    "countryCode": "GR",
+    "dialCode": "+30",
+    "numOfInvestor": 0,
+    "numOfTransaction": 0,
+    "totalTransactionAmount": 0.00
+  },
+  {
+    "id": 0,
+    "country": "Greenland",
+    "countryCode": "GL",
+    "dialCode": "+299",
+    "numOfInvestor": 0,
+    "numOfTransaction": 0,
+    "totalTransactionAmount": 0.00
+  },
+  {
+    "id": 0,
+    "country": "Grenada",
+    "countryCode": "GD",
+    "dialCode": "+1473",
+    "numOfInvestor": 0,
+    "numOfTransaction": 0,
+    "totalTransactionAmount": 0.00
+  },
+  {
+    "id": 0,
+    "country": "Guadeloupe",
+    "countryCode": "GP",
+    "dialCode": "+590",
+    "numOfInvestor": 0,
+    "numOfTransaction": 0,
+    "totalTransactionAmount": 0.00
+  },
+  {
+    "id": 0,
+    "country": "Guam",
+    "countryCode": "GU",
+    "dialCode": "+1671",
+    "numOfInvestor": 0,
+    "numOfTransaction": 0,
+    "totalTransactionAmount": 0.00
+  },
+  {
+    "id": 0,
+    "country": "Guatemala",
+    "countryCode": "GT",
+    "dialCode": "+502",
+    "numOfInvestor": 0,
+    "numOfTransaction": 0,
+    "totalTransactionAmount": 0.00
+  },
+  {
+    "id": 0,
+    "country": "Guernsey",
+    "countryCode": "GG",
+    "dialCode": "+44",
+    "numOfInvestor": 0,
+    "numOfTransaction": 0,
+    "totalTransactionAmount": 0.00
+  },
+  {
+    "id": 0,
+    "country": "Guinea",
+    "countryCode": "GN",
+    "dialCode": "+224",
+    "numOfInvestor": 0,
+    "numOfTransaction": 0,
+    "totalTransactionAmount": 0.00
+  },
+  {
+    "id": 0,
+    "country": "Guinea-Bissau",
+    "countryCode": "GW",
+    "dialCode": "+245",
+    "numOfInvestor": 0,
+    "numOfTransaction": 0,
+    "totalTransactionAmount": 0.00
+  },
+  {
+    "id": 0,
+    "country": "Guyana",
+    "countryCode": "GY",
+    "dialCode": "+592",
+    "numOfInvestor": 0,
+    "numOfTransaction": 0,
+    "totalTransactionAmount": 0.00
+  },
+  {
+    "id": 0,
+    "country": "Haiti",
+    "countryCode": "HT",
+    "dialCode": "+509",
+    "numOfInvestor": 0,
+    "numOfTransaction": 0,
+    "totalTransactionAmount": 0.00
+  },
+  {
+    "id": 0,
+    "country": "Heard Island and McDonald Islands",
+    "countryCode": "HM",
+    "dialCode": "+0",
+    "numOfInvestor": 0,
+    "numOfTransaction": 0,
+    "totalTransactionAmount": 0.00
+  },
+  {
+    "id": 0,
+    "country": "Holy See (Vatican City State)",
+    "countryCode": "VA",
+    "dialCode": "+379",
+    "numOfInvestor": 0,
+    "numOfTransaction": 0,
+    "totalTransactionAmount": 0.00
+  },
+  {
+    "id": 0,
+    "country": "Honduras",
+    "countryCode": "HN",
+    "dialCode": "+504",
+    "numOfInvestor": 0,
+    "numOfTransaction": 0,
+    "totalTransactionAmount": 0.00
+  },
+  {
+    "id": 0,
+    "country": "Hong Kong",
+    "countryCode": "HK",
+    "dialCode": "+852",
+    "numOfInvestor": 0,
+    "numOfTransaction": 0,
+    "totalTransactionAmount": 0.00
+  },
+  {
+    "id": 0,
+    "country": "Hungary",
+    "countryCode": "HU",
+    "dialCode": "+36",
+    "numOfInvestor": 0,
+    "numOfTransaction": 0,
+    "totalTransactionAmount": 0.00
+  },
+  {
+    "id": 0,
+    "country": "Iceland",
+    "countryCode": "IS",
+    "dialCode": "+354",
+    "numOfInvestor": 0,
+    "numOfTransaction": 0,
+    "totalTransactionAmount": 0.00
+  },
+  {
+    "id": 0,
+    "country": "India",
+    "countryCode": "IN",
+    "dialCode": "+91",
+    "numOfInvestor": 0,
+    "numOfTransaction": 0,
+    "totalTransactionAmount": 0.00
+  },
+  {
+    "id": 0,
+    "country": "Indonesia",
+    "countryCode": "ID",
+    "dialCode": "+62",
+    "numOfInvestor": 0,
+    "numOfTransaction": 0,
+    "totalTransactionAmount": 0.00
+  },
+  {
+    "id": 0,
+    "country": "Iran, Islamic Republic of",
+    "countryCode": "IR",
+    "dialCode": "+98",
+    "numOfInvestor": 0,
+    "numOfTransaction": 0,
+    "totalTransactionAmount": 0.00
+  },
+  {
+    "id": 0,
+    "country": "Iraq",
+    "countryCode": "IQ",
+    "dialCode": "+964",
+    "numOfInvestor": 0,
+    "numOfTransaction": 0,
+    "totalTransactionAmount": 0.00
+  },
+  {
+    "id": 0,
+    "country": "Ireland",
+    "countryCode": "IE",
+    "dialCode": "+353",
+    "numOfInvestor": 0,
+    "numOfTransaction": 0,
+    "totalTransactionAmount": 0.00
+  },
+  {
+    "id": 0,
+    "country": "Isle of Man",
+    "countryCode": "IM",
+    "dialCode": "+44",
+    "numOfInvestor": 0,
+    "numOfTransaction": 0,
+    "totalTransactionAmount": 0.00
+  },
+  {
+    "id": 0,
+    "country": "Israel",
+    "countryCode": "IL",
+    "dialCode": "+972",
+    "numOfInvestor": 0,
+    "numOfTransaction": 0,
+    "totalTransactionAmount": 0.00
+  },
+  {
+    "id": 0,
+    "country": "Italy",
+    "countryCode": "IT",
+    "dialCode": "+39",
+    "numOfInvestor": 0,
+    "numOfTransaction": 0,
+    "totalTransactionAmount": 0.00
+  },
+  {
+    "id": 0,
+    "country": "Jamaica",
+    "countryCode": "JM",
+    "dialCode": "+1876",
+    "numOfInvestor": 0,
+    "numOfTransaction": 0,
+    "totalTransactionAmount": 0.00
+  },
+  {
+    "id": 0,
+    "country": "Japan",
+    "countryCode": "JP",
+    "dialCode": "+81",
+    "numOfInvestor": 0,
+    "numOfTransaction": 0,
+    "totalTransactionAmount": 0.00
+  },
+  {
+    "id": 0,
+    "country": "Jersey",
+    "countryCode": "JE",
+    "dialCode": "+44",
+    "numOfInvestor": 0,
+    "numOfTransaction": 0,
+    "totalTransactionAmount": 0.00
+  },
+  {
+    "id": 0,
+    "country": "Jordan",
+    "countryCode": "JO",
+    "dialCode": "+962",
+    "numOfInvestor": 0,
+    "numOfTransaction": 0,
+    "totalTransactionAmount": 0.00
+  },
+  {
+    "id": 0,
+    "country": "Kazakhstan",
+    "countryCode": "KZ",
+    "dialCode": "+7",
+    "numOfInvestor": 0,
+    "numOfTransaction": 0,
+    "totalTransactionAmount": 0.00
+  },
+  {
+    "id": 0,
+    "country": "Kenya",
+    "countryCode": "KE",
+    "dialCode": "+254",
+    "numOfInvestor": 0,
+    "numOfTransaction": 0,
+    "totalTransactionAmount": 0.00
+  },
+  {
+    "id": 0,
+    "country": "Kiribati",
+    "countryCode": "KI",
+    "dialCode": "+686",
+    "numOfInvestor": 0,
+    "numOfTransaction": 0,
+    "totalTransactionAmount": 0.00
+  },
+  {
+    "id": 0,
+    "country": "North Korea",
+    "countryCode": "KP",
+    "dialCode": "+850",
+    "numOfInvestor": 0,
+    "numOfTransaction": 0,
+    "totalTransactionAmount": 0.00
+  },
+  {
+    "id": 0,
+    "country": "South Korea",
+    "countryCode": "KR",
+    "dialCode": "+82",
+    "numOfInvestor": 0,
+    "numOfTransaction": 0,
+    "totalTransactionAmount": 0.00
+  },
+  {
+    "id": 0,
+    "country": "Kosovo",
+    "countryCode": "XK",
+    "dialCode": "+383",
+    "numOfInvestor": 0,
+    "numOfTransaction": 0,
+    "totalTransactionAmount": 0.00
+  },
+  {
+    "id": 0,
+    "country": "Kuwait",
+    "countryCode": "KW",
+    "dialCode": "+965",
+    "numOfInvestor": 0,
+    "numOfTransaction": 0,
+    "totalTransactionAmount": 0.00
+  },
+  {
+    "id": 0,
+    "country": "Kyrgyzstan",
+    "countryCode": "KG",
+    "dialCode": "+996",
+    "numOfInvestor": 0,
+    "numOfTransaction": 0,
+    "totalTransactionAmount": 0.00
+  },
+  {
+    "id": 0,
+    "country": "Lao People's Democratic Republic",
+    "countryCode": "LA",
+    "dialCode": "+856",
+    "numOfInvestor": 0,
+    "numOfTransaction": 0,
+    "totalTransactionAmount": 0.00
+  },
+  {
+    "id": 0,
+    "country": "Latvia",
+    "countryCode": "LV",
+    "dialCode": "+371",
+    "numOfInvestor": 0,
+    "numOfTransaction": 0,
+    "totalTransactionAmount": 0.00
+  },
+  {
+    "id": 0,
+    "country": "Lebanon",
+    "countryCode": "LB",
+    "dialCode": "+961",
+    "numOfInvestor": 0,
+    "numOfTransaction": 0,
+    "totalTransactionAmount": 0.00
+  },
+  {
+    "id": 0,
+    "country": "Lesotho",
+    "countryCode": "LS",
+    "dialCode": "+266",
+    "numOfInvestor": 0,
+    "numOfTransaction": 0,
+    "totalTransactionAmount": 0.00
+  },
+  {
+    "id": 0,
+    "country": "Liberia",
+    "countryCode": "LR",
+    "dialCode": "+231",
+    "numOfInvestor": 0,
+    "numOfTransaction": 0,
+    "totalTransactionAmount": 0.00
+  },
+  {
+    "id": 0,
+    "country": "Libya",
+    "countryCode": "LY",
+    "dialCode": "+218",
+    "numOfInvestor": 0,
+    "numOfTransaction": 0,
+    "totalTransactionAmount": 0.00
+  },
+  {
+    "id": 0,
+    "country": "Liechtenstein",
+    "countryCode": "LI",
+    "dialCode": "+423",
+    "numOfInvestor": 0,
+    "numOfTransaction": 0,
+    "totalTransactionAmount": 0.00
+  },
+  {
+    "id": 0,
+    "country": "Lithuania",
+    "countryCode": "LT",
+    "dialCode": "+370",
+    "numOfInvestor": 0,
+    "numOfTransaction": 0,
+    "totalTransactionAmount": 0.00
+  },
+  {
+    "id": 0,
+    "country": "Luxembourg",
+    "countryCode": "LU",
+    "dialCode": "+352",
+    "numOfInvestor": 0,
+    "numOfTransaction": 0,
+    "totalTransactionAmount": 0.00
+  },
+  {
+    "id": 0,
+    "country": "Macao",
+    "countryCode": "MO",
+    "dialCode": "+853",
+    "numOfInvestor": 0,
+    "numOfTransaction": 0,
+    "totalTransactionAmount": 0.00
+  },
+  {
+    "id": 0,
+    "country": "North Macedonia, Republic of",
+    "countryCode": "MK",
+    "dialCode": "+389",
+    "numOfInvestor": 0,
+    "numOfTransaction": 0,
+    "totalTransactionAmount": 0.00
+  },
+  {
+    "id": 0,
+    "country": "Madagascar",
+    "countryCode": "MG",
+    "dialCode": "+261",
+    "numOfInvestor": 0,
+    "numOfTransaction": 0,
+    "totalTransactionAmount": 0.00
+  },
+  {
+    "id": 0,
+    "country": "Malawi",
+    "countryCode": "MW",
+    "dialCode": "+265",
+    "numOfInvestor": 0,
+    "numOfTransaction": 0,
+    "totalTransactionAmount": 0.00
+  },
+  {
+    "id": 0,
+    "country": "Malaysia",
+    "countryCode": "MY",
+    "dialCode": "+60",
+    "numOfInvestor": 0,
+    "numOfTransaction": 0,
+    "totalTransactionAmount": 0.00
+  },
+  {
+    "id": 0,
+    "country": "Maldives",
+    "countryCode": "MV",
+    "dialCode": "+960",
+    "numOfInvestor": 0,
+    "numOfTransaction": 0,
+    "totalTransactionAmount": 0.00
+  },
+  {
+    "id": 0,
+    "country": "Mali",
+    "countryCode": "ML",
+    "dialCode": "+223",
+    "numOfInvestor": 0,
+    "numOfTransaction": 0,
+    "totalTransactionAmount": 0.00
+  },
+  {
+    "id": 0,
+    "country": "Malta",
+    "countryCode": "MT",
+    "dialCode": "+356",
+    "numOfInvestor": 0,
+    "numOfTransaction": 0,
+    "totalTransactionAmount": 0.00
+  },
+  {
+    "id": 0,
+    "country": "Marshall Islands",
+    "countryCode": "MH",
+    "dialCode": "+692",
+    "numOfInvestor": 0,
+    "numOfTransaction": 0,
+    "totalTransactionAmount": 0.00
+  },
+  {
+    "id": 0,
+    "country": "Martinique",
+    "countryCode": "MQ",
+    "dialCode": "+596",
+    "numOfInvestor": 0,
+    "numOfTransaction": 0,
+    "totalTransactionAmount": 0.00
+  },
+  {
+    "id": 0,
+    "country": "Mauritania",
+    "countryCode": "MR",
+    "dialCode": "+222",
+    "numOfInvestor": 0,
+    "numOfTransaction": 0,
+    "totalTransactionAmount": 0.00
+  },
+  {
+    "id": 0,
+    "country": "Mauritius",
+    "countryCode": "MU",
+    "dialCode": "+230",
+    "numOfInvestor": 0,
+    "numOfTransaction": 0,
+    "totalTransactionAmount": 0.00
+  },
+  {
+    "id": 0,
+    "country": "Mayotte",
+    "countryCode": "YT",
+    "dialCode": "+262",
+    "numOfInvestor": 0,
+    "numOfTransaction": 0,
+    "totalTransactionAmount": 0.00
+  },
+  {
+    "id": 0,
+    "country": "Mexico",
+    "countryCode": "MX",
+    "dialCode": "+52",
+    "numOfInvestor": 0,
+    "numOfTransaction": 0,
+    "totalTransactionAmount": 0.00
+  },
+  {
+    "id": 0,
+    "country": "Micronesia, Federated States of",
+    "countryCode": "FM",
+    "dialCode": "+691",
+    "numOfInvestor": 0,
+    "numOfTransaction": 0,
+    "totalTransactionAmount": 0.00
+  },
+  {
+    "id": 0,
+    "country": "Moldova, Republic of",
+    "countryCode": "MD",
+    "dialCode": "+373",
+    "numOfInvestor": 0,
+    "numOfTransaction": 0,
+    "totalTransactionAmount": 0.00
+  },
+  {
+    "id": 0,
+    "country": "Monaco",
+    "countryCode": "MC",
+    "dialCode": "+377",
+    "numOfInvestor": 0,
+    "numOfTransaction": 0,
+    "totalTransactionAmount": 0.00
+  },
+  {
+    "id": 0,
+    "country": "Mongolia",
+    "countryCode": "MN",
+    "dialCode": "+976",
+    "numOfInvestor": 0,
+    "numOfTransaction": 0,
+    "totalTransactionAmount": 0.00
+  },
+  {
+    "id": 0,
+    "country": "Montenegro",
+    "countryCode": "ME",
+    "dialCode": "+382",
+    "numOfInvestor": 0,
+    "numOfTransaction": 0,
+    "totalTransactionAmount": 0.00
+  },
+  {
+    "id": 0,
+    "country": "Montserrat",
+    "countryCode": "MS",
+    "dialCode": "+1664",
+    "numOfInvestor": 0,
+    "numOfTransaction": 0,
+    "totalTransactionAmount": 0.00
+  },
+  {
+    "id": 0,
+    "country": "Morocco",
+    "countryCode": "MA",
+    "dialCode": "+212",
+    "numOfInvestor": 0,
+    "numOfTransaction": 0,
+    "totalTransactionAmount": 0.00
+  },
+  {
+    "id": 0,
+    "country": "Mozambique",
+    "countryCode": "MZ",
+    "dialCode": "+258",
+    "numOfInvestor": 0,
+    "numOfTransaction": 0,
+    "totalTransactionAmount": 0.00
+  },
+  {
+    "id": 0,
+    "country": "Myanmar",
+    "countryCode": "MM",
+    "dialCode": "+95",
+    "numOfInvestor": 0,
+    "numOfTransaction": 0,
+    "totalTransactionAmount": 0.00
+  },
+  {
+    "id": 0,
+    "country": "Namibia",
+    "countryCode": "NA",
+    "dialCode": "+264",
+    "numOfInvestor": 0,
+    "numOfTransaction": 0,
+    "totalTransactionAmount": 0.00
+  },
+  {
+    "id": 0,
+    "country": "Nauru",
+    "countryCode": "NR",
+    "dialCode": "+674",
+    "numOfInvestor": 0,
+    "numOfTransaction": 0,
+    "totalTransactionAmount": 0.00
+  },
+  {
+    "id": 0,
+    "country": "Nepal",
+    "countryCode": "NP",
+    "dialCode": "+977",
+    "numOfInvestor": 0,
+    "numOfTransaction": 0,
+    "totalTransactionAmount": 0.00
+  },
+  {
+    "id": 0,
+    "country": "Netherlands",
+    "countryCode": "NL",
+    "dialCode": "+31",
+    "numOfInvestor": 0,
+    "numOfTransaction": 0,
+    "totalTransactionAmount": 0.00
+  },
+  {
+    "id": 0,
+    "country": "Netherlands Antilles",
+    "countryCode": "AN",
+    "dialCode": "+599",
+    "numOfInvestor": 0,
+    "numOfTransaction": 0,
+    "totalTransactionAmount": 0.00
+  },
+  {
+    "id": 0,
+    "country": "New Caledonia",
+    "countryCode": "NC",
+    "dialCode": "+687",
+    "numOfInvestor": 0,
+    "numOfTransaction": 0,
+    "totalTransactionAmount": 0.00
+  },
+  {
+    "id": 0,
+    "country": "New Zealand",
+    "countryCode": "NZ",
+    "dialCode": "+64",
+    "numOfInvestor": 0,
+    "numOfTransaction": 0,
+    "totalTransactionAmount": 0.00
+  },
+  {
+    "id": 0,
+    "country": "Nicaragua",
+    "countryCode": "NI",
+    "dialCode": "+505",
+    "numOfInvestor": 0,
+    "numOfTransaction": 0,
+    "totalTransactionAmount": 0.00
+  },
+  {
+    "id": 0,
+    "country": "Niger",
+    "countryCode": "NE",
+    "dialCode": "+227",
+    "numOfInvestor": 0,
+    "numOfTransaction": 0,
+    "totalTransactionAmount": 0.00
+  },
+  {
+    "id": 0,
+    "country": "Nigeria",
+    "countryCode": "NG",
+    "dialCode": "+234",
+    "numOfInvestor": 0,
+    "numOfTransaction": 0,
+    "totalTransactionAmount": 0.00
+  },
+  {
+    "id": 0,
+    "country": "Niue",
+    "countryCode": "NU",
+    "dialCode": "+683",
+    "numOfInvestor": 0,
+    "numOfTransaction": 0,
+    "totalTransactionAmount": 0.00
+  },
+  {
+    "id": 0,
+    "country": "Norfolk Island",
+    "countryCode": "NF",
+    "dialCode": "+672",
+    "numOfInvestor": 0,
+    "numOfTransaction": 0,
+    "totalTransactionAmount": 0.00
+  },
+  {
+    "id": 0,
+    "country": "Northern Mariana Islands",
+    "countryCode": "MP",
+    "dialCode": "+1670",
+    "numOfInvestor": 0,
+    "numOfTransaction": 0,
+    "totalTransactionAmount": 0.00
+  },
+  {
+    "id": 0,
+    "country": "Norway",
+    "countryCode": "NO",
+    "dialCode": "+47",
+    "numOfInvestor": 0,
+    "numOfTransaction": 0,
+    "totalTransactionAmount": 0.00
+  },
+  {
+    "id": 0,
+    "country": "Oman",
+    "countryCode": "OM",
+    "dialCode": "+968",
+    "numOfInvestor": 0,
+    "numOfTransaction": 0,
+    "totalTransactionAmount": 0.00
+  },
+  {
+    "id": 0,
+    "country": "Pakistan",
+    "countryCode": "PK",
+    "dialCode": "+92",
+    "numOfInvestor": 0,
+    "numOfTransaction": 0,
+    "totalTransactionAmount": 0.00
+  },
+  {
+    "id": 0,
+    "country": "Palau",
+    "countryCode": "PW",
+    "dialCode": "+680",
+    "numOfInvestor": 0,
+    "numOfTransaction": 0,
+    "totalTransactionAmount": 0.00
+  },
+  {
+    "id": 0,
+    "country": "Palestine",
+    "countryCode": "PS",
+    "dialCode": "+970",
+    "numOfInvestor": 0,
+    "numOfTransaction": 0,
+    "totalTransactionAmount": 0.00
+  },
+  {
+    "id": 0,
+    "country": "Panama",
+    "countryCode": "PA",
+    "dialCode": "+507",
+    "numOfInvestor": 0,
+    "numOfTransaction": 0,
+    "totalTransactionAmount": 0.00
+  },
+  {
+    "id": 0,
+    "country": "Papua New Guinea",
+    "countryCode": "PG",
+    "dialCode": "+675",
+    "numOfInvestor": 0,
+    "numOfTransaction": 0,
+    "totalTransactionAmount": 0.00
+  },
+  {
+    "id": 0,
+    "country": "Paraguay",
+    "countryCode": "PY",
+    "dialCode": "+595",
+    "numOfInvestor": 0,
+    "numOfTransaction": 0,
+    "totalTransactionAmount": 0.00
+  },
+  {
+    "id": 0,
+    "country": "Peru",
+    "countryCode": "PE",
+    "dialCode": "+51",
+    "numOfInvestor": 0,
+    "numOfTransaction": 0,
+    "totalTransactionAmount": 0.00
+  },
+  {
+    "id": 0,
+    "country": "Philippines",
+    "countryCode": "PH",
+    "dialCode": "+63",
+    "numOfInvestor": 0,
+    "numOfTransaction": 0,
+    "totalTransactionAmount": 0.00
+  },
+  {
+    "id": 0,
+    "country": "Pitcairn",
+    "countryCode": "PN",
+    "dialCode": "+64",
+    "numOfInvestor": 0,
+    "numOfTransaction": 0,
+    "totalTransactionAmount": 0.00
+  },
+  {
+    "id": 0,
+    "country": "Poland",
+    "countryCode": "PL",
+    "dialCode": "+48",
+    "numOfInvestor": 0,
+    "numOfTransaction": 0,
+    "totalTransactionAmount": 0.00
+  },
+  {
+    "id": 0,
+    "country": "Portugal",
+    "countryCode": "PT",
+    "dialCode": "+351",
+    "numOfInvestor": 0,
+    "numOfTransaction": 0,
+    "totalTransactionAmount": 0.00
+  },
+  {
+    "id": 0,
+    "country": "Puerto Rico",
+    "countryCode": "PR",
+    "dialCode": "+1939",
+    "numOfInvestor": 0,
+    "numOfTransaction": 0,
+    "totalTransactionAmount": 0.00
+  },
+  {
+    "id": 0,
+    "country": "Puerto Rico",
+    "countryCode": "PR",
+    "dialCode": "+1787",
+    "numOfInvestor": 0,
+    "numOfTransaction": 0,
+    "totalTransactionAmount": 0.00
+  },
+  {
+    "id": 0,
+    "country": "Qatar",
+    "countryCode": "QA",
+    "dialCode": "+974",
+    "numOfInvestor": 0,
+    "numOfTransaction": 0,
+    "totalTransactionAmount": 0.00
+  },
+  {
+    "id": 0,
+    "country": "Romania",
+    "countryCode": "RO",
+    "dialCode": "+40",
+    "numOfInvestor": 0,
+    "numOfTransaction": 0,
+    "totalTransactionAmount": 0.00
+  },
+  {
+    "id": 0,
+    "country": "Russia",
+    "countryCode": "RU",
+    "dialCode": "+7",
+    "numOfInvestor": 0,
+    "numOfTransaction": 0,
+    "totalTransactionAmount": 0.00
+  },
+  {
+    "id": 0,
+    "country": "Rwanda",
+    "countryCode": "RW",
+    "dialCode": "+250",
+    "numOfInvestor": 0,
+    "numOfTransaction": 0,
+    "totalTransactionAmount": 0.00
+  },
+  {
+    "id": 0,
+    "country": "Reunion",
+    "countryCode": "RE",
+    "dialCode": "+262",
+    "numOfInvestor": 0,
+    "numOfTransaction": 0,
+    "totalTransactionAmount": 0.00
+  },
+  {
+    "id": 0,
+    "country": "Saint Barthélemy",
+    "countryCode": "BL",
+    "dialCode": "+590",
+    "numOfInvestor": 0,
+    "numOfTransaction": 0,
+    "totalTransactionAmount": 0.00
+  },
+  {
+    "id": 0,
+    "country": "Saint Helena",
+    "countryCode": "SH",
+    "dialCode": "+290",
+    "numOfInvestor": 0,
+    "numOfTransaction": 0,
+    "totalTransactionAmount": 0.00
+  },
+  {
+    "id": 0,
+    "country": "Saint Kitts and Nevis",
+    "countryCode": "KN",
+    "dialCode": "+1869",
+    "numOfInvestor": 0,
+    "numOfTransaction": 0,
+    "totalTransactionAmount": 0.00
+  },
+  {
+    "id": 0,
+    "country": "Saint Lucia",
+    "countryCode": "LC",
+    "dialCode": "+1758",
+    "numOfInvestor": 0,
+    "numOfTransaction": 0,
+    "totalTransactionAmount": 0.00
+  },
+  {
+    "id": 0,
+    "country": "Saint Martin (French part)",
+    "countryCode": "MF",
+    "dialCode": "+590",
+    "numOfInvestor": 0,
+    "numOfTransaction": 0,
+    "totalTransactionAmount": 0.00
+  },
+  {
+    "id": 0,
+    "country": "Saint Pierre and Miquelon",
+    "countryCode": "PM",
+    "dialCode": "+508",
+    "numOfInvestor": 0,
+    "numOfTransaction": 0,
+    "totalTransactionAmount": 0.00
+  },
+  {
+    "id": 0,
+    "country": "Saint Vincent and the Grenadines",
+    "countryCode": "VC",
+    "dialCode": "+1784",
+    "numOfInvestor": 0,
+    "numOfTransaction": 0,
+    "totalTransactionAmount": 0.00
+  },
+  {
+    "id": 0,
+    "country": "Samoa",
+    "countryCode": "WS",
+    "dialCode": "+685",
+    "numOfInvestor": 0,
+    "numOfTransaction": 0,
+    "totalTransactionAmount": 0.00
+  },
+  {
+    "id": 0,
+    "country": "San Marino",
+    "countryCode": "SM",
+    "dialCode": "+378",
+    "numOfInvestor": 0,
+    "numOfTransaction": 0,
+    "totalTransactionAmount": 0.00
+  },
+  {
+    "id": 0,
+    "country": "Sao Tome and Principe",
+    "countryCode": "ST",
+    "dialCode": "+239",
+    "numOfInvestor": 0,
+    "numOfTransaction": 0,
+    "totalTransactionAmount": 0.00
+  },
+  {
+    "id": 0,
+    "country": "Saudi Arabia",
+    "countryCode": "SA",
+    "dialCode": "+966",
+    "numOfInvestor": 0,
+    "numOfTransaction": 0,
+    "totalTransactionAmount": 0.00
+  },
+  {
+    "id": 0,
+    "country": "Senegal",
+    "countryCode": "SN",
+    "dialCode": "+221",
+    "numOfInvestor": 0,
+    "numOfTransaction": 0,
+    "totalTransactionAmount": 0.00
+  },
+  {
+    "id": 0,
+    "country": "Serbia",
+    "countryCode": "RS",
+    "dialCode": "+381",
+    "numOfInvestor": 0,
+    "numOfTransaction": 0,
+    "totalTransactionAmount": 0.00
+  },
+  {
+    "id": 0,
+    "country": "Seychelles",
+    "countryCode": "SC",
+    "dialCode": "+248",
+    "numOfInvestor": 0,
+    "numOfTransaction": 0,
+    "totalTransactionAmount": 0.00
+  },
+  {
+    "id": 0,
+    "country": "Sierra Leone",
+    "countryCode": "SL",
+    "dialCode": "+232",
+    "numOfInvestor": 0,
+    "numOfTransaction": 0,
+    "totalTransactionAmount": 0.00
+  },
+  {
+    "id": 0,
+    "country": "Singapore",
+    "countryCode": "SG",
+    "dialCode": "+65",
+    "numOfInvestor": 0,
+    "numOfTransaction": 0,
+    "totalTransactionAmount": 0.00
+  },
+  {
+    "id": 0,
+    "country": "Slovakia",
+    "countryCode": "SK",
+    "dialCode": "+421",
+    "numOfInvestor": 0,
+    "numOfTransaction": 0,
+    "totalTransactionAmount": 0.00
+  },
+  {
+    "id": 0,
+    "country": "Slovenia",
+    "countryCode": "SI",
+    "dialCode": "+386",
+    "numOfInvestor": 0,
+    "numOfTransaction": 0,
+    "totalTransactionAmount": 0.00
+  },
+  {
+    "id": 0,
+    "country": "Solomon Islands",
+    "countryCode": "SB",
+    "dialCode": "+677",
+    "numOfInvestor": 0,
+    "numOfTransaction": 0,
+    "totalTransactionAmount": 0.00
+  },
+  {
+    "id": 0,
+    "country": "Somali",
+    "countryCode": "SO",
+    "dialCode": "+252",
+    "numOfInvestor": 0,
+    "numOfTransaction": 0,
+    "totalTransactionAmount": 0.00
+  },
+  {
+    "id": 0,
+    "country": "South Africa",
+    "countryCode": "ZA",
+    "dialCode": "+27",
+    "numOfInvestor": 0,
+    "numOfTransaction": 0,
+    "totalTransactionAmount": 0.00
+  },
+  {
+    "id": 0,
+    "country": "South Sudan",
+    "countryCode": "SS",
+    "dialCode": "+211",
+    "numOfInvestor": 0,
+    "numOfTransaction": 0,
+    "totalTransactionAmount": 0.00
+  },
+  {
+    "id": 0,
+    "country": "South Georgia and the South Sandwich Islands",
+    "countryCode": "GS",
+    "dialCode": "+500",
+    "numOfInvestor": 0,
+    "numOfTransaction": 0,
+    "totalTransactionAmount": 0.00
+  },
+  {
+    "id": 0,
+    "country": "Spain",
+    "countryCode": "ES",
+    "dialCode": "+34",
+    "numOfInvestor": 0,
+    "numOfTransaction": 0,
+    "totalTransactionAmount": 0.00
+  },
+  {
+    "id": 0,
+    "country": "Sri Lanka",
+    "countryCode": "LK",
+    "dialCode": "+94",
+    "numOfInvestor": 0,
+    "numOfTransaction": 0,
+    "totalTransactionAmount": 0.00
+  },
+  {
+    "id": 0,
+    "country": "Sudan",
+    "countryCode": "SD",
+    "dialCode": "+249",
+    "numOfInvestor": 0,
+    "numOfTransaction": 0,
+    "totalTransactionAmount": 0.00
+  },
+  {
+    "id": 0,
+    "country": "Suricountry",
+    "countryCode": "SR",
+    "dialCode": "+597",
+    "numOfInvestor": 0,
+    "numOfTransaction": 0,
+    "totalTransactionAmount": 0.00
+  },
+  {
+    "id": 0,
+    "country": "Svalbard and Jan Mayen",
+    "countryCode": "SJ",
+    "dialCode": "+47",
+    "numOfInvestor": 0,
+    "numOfTransaction": 0,
+    "totalTransactionAmount": 0.00
+  },
+  {
+    "id": 0,
+    "country": "Eswatini",
+    "countryCode": "SZ",
+    "dialCode": "+268",
+    "numOfInvestor": 0,
+    "numOfTransaction": 0,
+    "totalTransactionAmount": 0.00
+  },
+  {
+    "id": 0,
+    "country": "Sweden",
+    "countryCode": "SE",
+    "dialCode": "+46",
+    "numOfInvestor": 0,
+    "numOfTransaction": 0,
+    "totalTransactionAmount": 0.00
+  },
+  {
+    "id": 0,
+    "country": "Switzerland",
+    "countryCode": "CH",
+    "dialCode": "+41",
+    "numOfInvestor": 0,
+    "numOfTransaction": 0,
+    "totalTransactionAmount": 0.00
+  },
+  {
+    "id": 0,
+    "country": "Syrian Arab Republic",
+    "countryCode": "SY",
+    "dialCode": "+963",
+    "numOfInvestor": 0,
+    "numOfTransaction": 0,
+    "totalTransactionAmount": 0.00
+  },
+  {
+    "id": 0,
+    "country": "Taiwan",
+    "countryCode": "TW",
+    "dialCode": "+886",
+    "numOfInvestor": 0,
+    "numOfTransaction": 0,
+    "totalTransactionAmount": 0.00
+  },
+  {
+    "id": 0,
+    "country": "Tajikistan",
+    "countryCode": "TJ",
+    "dialCode": "+992",
+    "numOfInvestor": 0,
+    "numOfTransaction": 0,
+    "totalTransactionAmount": 0.00
+  },
+  {
+    "id": 0,
+    "country": "Tanzania, United Republic of",
+    "countryCode": "TZ",
+    "dialCode": "+255",
+    "numOfInvestor": 0,
+    "numOfTransaction": 0,
+    "totalTransactionAmount": 0.00
+  },
+  {
+    "id": 0,
+    "country": "Thailand",
+    "countryCode": "TH",
+    "dialCode": "+66",
+    "numOfInvestor": 0,
+    "numOfTransaction": 0,
+    "totalTransactionAmount": 0.00
+  },
+  {
+    "id": 0,
+    "country": "Timor-Leste",
+    "countryCode": "TL",
+    "dialCode": "+670",
+    "numOfInvestor": 0,
+    "numOfTransaction": 0,
+    "totalTransactionAmount": 0.00
+  },
+  {
+    "id": 0,
+    "country": "Togo",
+    "countryCode": "TG",
+    "dialCode": "+228",
+    "numOfInvestor": 0,
+    "numOfTransaction": 0,
+    "totalTransactionAmount": 0.00
+  },
+  {
+    "id": 0,
+    "country": "Tokelau",
+    "countryCode": "TK",
+    "dialCode": "+690",
+    "numOfInvestor": 0,
+    "numOfTransaction": 0,
+    "totalTransactionAmount": 0.00
+  },
+  {
+    "id": 0,
+    "country": "Tonga",
+    "countryCode": "TO",
+    "dialCode": "+676",
+    "numOfInvestor": 0,
+    "numOfTransaction": 0,
+    "totalTransactionAmount": 0.00
+  },
+  {
+    "id": 0,
+    "country": "Trinidad and Tobago",
+    "countryCode": "TT",
+    "dialCode": "+1868",
+    "numOfInvestor": 0,
+    "numOfTransaction": 0,
+    "totalTransactionAmount": 0.00
+  },
+  {
+    "id": 0,
+    "country": "Tunisia",
+    "countryCode": "TN",
+    "dialCode": "+216",
+    "numOfInvestor": 0,
+    "numOfTransaction": 0,
+    "totalTransactionAmount": 0.00
+  },
+  {
+    "id": 0,
+    "country": "Turkey",
+    "countryCode": "TR",
+    "dialCode": "+90",
+    "numOfInvestor": 0,
+    "numOfTransaction": 0,
+    "totalTransactionAmount": 0.00
+  },
+  {
+    "id": 0,
+    "country": "Turkmenistan",
+    "countryCode": "TM",
+    "dialCode": "+993",
+    "numOfInvestor": 0,
+    "numOfTransaction": 0,
+    "totalTransactionAmount": 0.00
+  },
+  {
+    "id": 0,
+    "country": "Turks and Caicos Islands",
+    "countryCode": "TC",
+    "dialCode": "+1649",
+    "numOfInvestor": 0,
+    "numOfTransaction": 0,
+    "totalTransactionAmount": 0.00
+  },
+  {
+    "id": 0,
+    "country": "Tuvalu",
+    "countryCode": "TV",
+    "dialCode": "+688",
+    "numOfInvestor": 0,
+    "numOfTransaction": 0,
+    "totalTransactionAmount": 0.00
+  },
+  {
+    "id": 0,
+    "country": "Uganda",
+    "countryCode": "UG",
+    "dialCode": "+256",
+    "numOfInvestor": 0,
+    "numOfTransaction": 0,
+    "totalTransactionAmount": 0.00
+  },
+  {
+    "id": 0,
+    "country": "Ukraine",
+    "countryCode": "UA",
+    "dialCode": "+380",
+    "numOfInvestor": 0,
+    "numOfTransaction": 0,
+    "totalTransactionAmount": 0.00
+  },
+  {
+    "id": 0,
+    "country": "United Arab Emirates",
+    "countryCode": "AE",
+    "dialCode": "+971",
+    "numOfInvestor": 0,
+    "numOfTransaction": 0,
+    "totalTransactionAmount": 0.00
+  },
+  {
+    "id": 0,
+    "country": "United Kingdom",
+    "countryCode": "GB",
+    "dialCode": "+44",
+    "numOfInvestor": 0,
+    "numOfTransaction": 0,
+    "totalTransactionAmount": 0.00
+  },
+  {
+    "id": 0,
+    "country": "United States of America",
+    "countryCode": "US",
+    "dialCode": "+1",
+    "numOfInvestor": 0,
+    "numOfTransaction": 0,
+    "totalTransactionAmount": 0.00
+  },
+  {
+    "id": 0,
+    "country": "Uruguay",
+    "countryCode": "UY",
+    "dialCode": "+598",
+    "numOfInvestor": 0,
+    "numOfTransaction": 0,
+    "totalTransactionAmount": 0.00
+  },
+  {
+    "id": 0,
+    "country": "Uzbekistan",
+    "countryCode": "UZ",
+    "dialCode": "+998",
+    "numOfInvestor": 0,
+    "numOfTransaction": 0,
+    "totalTransactionAmount": 0.00
+  },
+  {
+    "id": 0,
+    "country": "Vanuatu",
+    "countryCode": "VU",
+    "dialCode": "+678",
+    "numOfInvestor": 0,
+    "numOfTransaction": 0,
+    "totalTransactionAmount": 0.00
+  },
+  {
+    "id": 0,
+    "country": "Venezuela",
+    "countryCode": "VE",
+    "dialCode": "+58",
+    "numOfInvestor": 0,
+    "numOfTransaction": 0,
+    "totalTransactionAmount": 0.00
+  },
+  {
+    "id": 0,
+    "country": "Vietnam",
+    "countryCode": "VN",
+    "dialCode": "+84",
+    "numOfInvestor": 0,
+    "numOfTransaction": 0,
+    "totalTransactionAmount": 0.00
+  },
+  {
+    "id": 0,
+    "country": "Virgin Islands, British",
+    "countryCode": "VG",
+    "dialCode": "+1284",
+    "numOfInvestor": 0,
+    "numOfTransaction": 0,
+    "totalTransactionAmount": 0.00
+  },
+  {
+    "id": 0,
+    "country": "Virgin Islands, U.S.",
+    "countryCode": "VI",
+    "dialCode": "+1340",
+    "numOfInvestor": 0,
+    "numOfTransaction": 0,
+    "totalTransactionAmount": 0.00
+  },
+  {
+    "id": 0,
+    "country": "Wallis and Futuna",
+    "countryCode": "WF",
+    "dialCode": "+681",
+    "numOfInvestor": 0,
+    "numOfTransaction": 0,
+    "totalTransactionAmount": 0.00
+  },
+  {
+    "id": 0,
+    "country": "Yemen",
+    "countryCode": "YE",
+    "dialCode": "+967",
+    "numOfInvestor": 0,
+    "numOfTransaction": 0,
+    "totalTransactionAmount": 0.00
+  },
+  {
+    "id": 0,
+    "country": "Zambia",
+    "countryCode": "ZM",
+    "dialCode": "+260",
+    "numOfInvestor": 0,
+    "numOfTransaction": 0,
+    "totalTransactionAmount": 0.00
+  },
+  {
+    "id": 0,
+    "country": "Zimbabwe",
+    "countryCode": "ZW",
+    "dialCode": "+263",
+    "numOfInvestor": 0,
+    "numOfTransaction": 0,
+    "totalTransactionAmount": 0.0
+  }
+]

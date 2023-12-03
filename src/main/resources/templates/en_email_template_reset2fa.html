@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&amp;display=swap"
+        rel="stylesheet">
+    <title>Document</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Open Sans', sans-serif;
+        }
+
+        .email-template {
+            max-width: 864px;
+            margin: 0 auto;
+            padding: 40px 132px 56px;
+            background: ${backgroundColor};
+        }
+
+        .header {
+            text-align: center;
+            font-size: 28px;
+            font-weight: 700;
+            color: #fff;
+            margin-bottom: 40px;
+        }
+
+        .content {
+            background-color: #fff;
+            padding: 40px;
+            border-radius: 4px;
+            margin-bottom: 40px;
+            font-size: 16px;
+            line-height: 24px;
+            color: #0A0B0D;
+        }
+
+        .code {
+            text-align: center;
+            color: ${tokenColor};
+            font-size: 32px;
+            line-height: 1;
+            letter-spacing: 0.2em;
+            font-weight: 600;
+        }
+
+        .content-footer {
+            color: #5B616E;
+            font-size: 14px;
+            line-height: 20px;
+        }
+
+        .title {
+            color: #fff;
+            text-align: center;
+            font-size: 14px;
+            font-weight: 500;
+        }
+
+        .download {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .download a:first-child {
+            margin-right: 16px;
+        }
+
+        .term {
+            text-align: center;
+            color: #fff;
+            font-size: 12px;
+            font-weight: 500;
+        }
+
+        .term p:last-child {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .mb-16 {
+            margin-bottom: 16px;
+        }
+		
+		a {
+            text-decoration: none;
+        }
+		
+		a.token-term {
+            color: #fff;
+        }
+		
+        @media screen and (max-width:768px) {
+            .email-template {
+                padding: 15px;
+            }
+        }
+
+        @media screen and (max-width:576px) {
+            .email-template {
+                padding: 15px;
+            }
+
+            .header {
+                margin-bottom: 20px;
+            }
+
+            .content {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="email-template">
+        <div class="header">
+            <span>${tokenName}</span>
+        </div>
+        <div class="content" style="text-align: center;">
+			<!-- You’re request reset 2FA to default! -->
+			<!-- You’re request change phone! -->
+            <h2 style="color:#0A0B0D;font-weight:600; margin:24px 0;font-size: 20px; line-height: 24px;">${title}</h2>
+            <p style="font-size: 16px;line-height: 24px;color: #5B616E;text-align: start;">Hi <span
+                    style="font-weight: 600;">${fullName}</span>,<br />
+                Press below button to ${action}.</p>
+            <a href="${actionLink}" style="height: 48px;
+            width: 100%;
+            display: block;
+            line-height: 48px;
+            background: ${tokenColor};
+            color: #fff;
+            font-weight: 600;
+            text-align: center;
+            text-decoration: none;
+            border-radius: 6px;
+            margin-top: 24px;">${action}</a><br/>
+            <p class="content-footer">If you have any questions regarding this message, please contact our support team
+                at <span>${supportEmail}</span>.
+            </p>
+        </div>
+        <div class="footer">
+            <p class="mb-16 title">Get the latest ${tokenName} App for your phone</p>
+            <div class="download" style=" text-align: center;">
+                <a href=${linkDownloadIOS} target="_blank">
+                    <img src="https://res.cloudinary.com/storeimage/image/upload/v1636103405/App_Store_-_eng_vl0tct.png"
+                        style="width: 135px;height: 40px;" alt="">
+                </a>
+                <a href=${linkDownloadAndroid} target="_blank">
+                    <img src="https://res.cloudinary.com/storeimage/image/upload/v1636103444/Google_Play_-_eng_dlzarz.png"
+                        style="width: 135px;height: 40px;" alt="">
+                </a>
+            </div>
+            <div class="term">
+                <p>Terms of Service</p>
+                <p><svg width="14" height="14" viewbox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M6 0.75C3.10078 0.75 0.75 3.10078 0.75 6C0.75 8.89922 3.10078 11.25 6 11.25C8.89922 11.25 11.25 8.89922 11.25 6C11.25 3.10078 8.89922 0.75 6 0.75ZM6 10.3594C3.59297 10.3594 1.64062 8.40703 1.64062 6C1.64062 3.59297 3.59297 1.64062 6 1.64062C8.40703 1.64062 10.3594 3.59297 10.3594 6C10.3594 8.40703 8.40703 10.3594 6 10.3594ZM6.06562 4.1168C6.68672 4.1168 7.10859 4.51289 7.15547 5.09414C7.15898 5.14336 7.2 5.18086 7.24922 5.18086H7.91367C7.94414 5.18086 7.96875 5.15625 7.96875 5.12578C7.96875 4.10977 7.16719 3.39844 6.06211 3.39844C4.77422 3.39844 4.03125 4.26797 4.03125 5.70469V6.31758C4.03125 7.74375 4.77422 8.60156 6.06211 8.60156C7.16367 8.60156 7.96875 7.9125 7.96875 6.94453C7.96875 6.91406 7.94414 6.88945 7.91367 6.88945H7.24805C7.19883 6.88945 7.15898 6.92695 7.1543 6.975C7.10508 7.51523 6.68437 7.88672 6.06445 7.88672C5.29922 7.88672 4.86797 7.32539 4.86797 6.32109V5.70469C4.86914 4.68516 5.30156 4.1168 6.06562 4.1168Z"
+                            fill="white"></path>
+                    </svg>
+                    <a class="token-term" href=${tokenTerm}>${tokenName}</a>
+                </p>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
