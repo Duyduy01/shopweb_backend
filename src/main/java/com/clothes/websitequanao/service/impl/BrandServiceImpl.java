@@ -14,6 +14,7 @@ import com.clothes.websitequanao.utils.FileUtil;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
+import org.springframework.web.multipart.MultipartFile;
 
 import javax.persistence.EntityManager;
 import javax.persistence.Query;
@@ -77,7 +78,6 @@ public class BrandServiceImpl implements BrandService {
                 result.setBoolActive(dto.getStatus() == 1 ? true : false);
 
                 if (dto.getIcon() != null) {
-
                     fileService.deleteFile(FileUtil.getImgName(result.getIcon()));
                     String icon = (String) fileService.upload(dto.getIcon());
                     // save link database
@@ -92,6 +92,51 @@ public class BrandServiceImpl implements BrandService {
             e.printStackTrace();
             log.error("error add or edit brand");
             return ServiceResponse.RESPONSE_ERROR("Lỗi trong quá trình thay đổi thương hiệu");
+        }
+    }
+
+    @Override
+    public ServiceResponse deleteBrandById(Long id) {
+        try {
+            BrandEntity brandEntity = brandRepo.findById(id).orElse(null);
+            if (brandEntity == null) {
+                return ServiceResponse.RESPONSE_ERROR("Thương hiệu không tồn tại");
+            }
+
+            // Xóa ảnh từ Firebase Storage
+            String imageUrl = brandEntity.getIcon();
+            if (imageUrl != null) {
+                // Lấy tên tệp từ đường dẫn
+                String fileName = FileUtil.getImgName(imageUrl);
+
+                // Gửi yêu cầu xóa ảnh từ Firebase
+                boolean firebaseDeleteSuccess = fileService.deleteFile(fileName);
+
+                if (!firebaseDeleteSuccess) {
+                    // Nếu xóa ảnh từ Firebase thất bại, có thể xem xét cách xử lý tùy thuộc vào yêu cầu của bạn
+                    return ServiceResponse.RESPONSE_ERROR("Xóa thương hiệu thất bại");
+                }
+            }
+
+            // Xóa thương hiệu của products
+            List<ProductEntity> products = productRepo.findAllByBrandId(id);
+            if (!products.isEmpty()) {
+                // Chỉ xóa trường brandId của các sản phẩm
+                for (ProductEntity product : products) {
+                    product.setBrandId(null);
+                }
+                // Lưu lại các sản phẩm đã cập nhật trường brandId
+                productRepo.saveAll(products);
+            }
+
+            // Delete brand
+            brandRepo.deleteById(id);
+
+            return ServiceResponse.RESPONSE_SUCCESS("Xóa thương hiệu thành công");
+        } catch (Exception e) {
+            e.printStackTrace();
+            log.error("error delete brand by id");
+            return ServiceResponse.RESPONSE_ERROR("Lỗi trong quá trình xóa thương hiệu");
         }
     }
 

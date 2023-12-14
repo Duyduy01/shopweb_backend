@@ -24,6 +24,8 @@ public interface ProductService {
 
     boolean checkExistChild(Long id);
 
+    int getTotalQuantityOfChildren(Long parentId);
+
     ServiceResponse getOneProductById(Long id);
 
     ServiceResponse updateStatus(Long id);

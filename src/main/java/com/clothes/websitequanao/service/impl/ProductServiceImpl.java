@@ -152,6 +152,19 @@ public class ProductServiceImpl implements ProductService {
         return result;
     }
 
+    @Override
+    public int getTotalQuantityOfChildren(Long parentId) {
+        // Sử dụng productRepo để lấy danh sách các sản phẩm con của sản phẩm cha
+        List<ProductEntity> children = productRepo.findAllByParentId(parentId);
+
+        int totalQuantity = 0;
+        for (ProductEntity child : children) {
+            // Cộng dồn quantity của từng sản phẩm con
+            totalQuantity += child.getQuantity();
+        }
+
+        return totalQuantity;
+    }
 
     // thêm sản phẩm
     private void addProduct(ProductAdminRequestDto dto) {

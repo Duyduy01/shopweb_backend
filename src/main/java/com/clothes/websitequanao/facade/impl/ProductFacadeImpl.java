@@ -31,6 +31,10 @@ public class ProductFacadeImpl implements ProductFacade {
             if (id == null) {
                 boolean checkExist = productService.checkExistChild(e.getId());
                 e.setCheckChildren(checkExist);
+
+                // Nếu là sản phẩm cha, kiểm tra và cập nhật tổng quantity của sản phẩm con
+                int totalQuantityOfChildren = productService.getTotalQuantityOfChildren(e.getId());
+                e.setQuantity(totalQuantityOfChildren);
             }
             e.setBoolActive(e.getActive() == 1 ? true : false);
         });

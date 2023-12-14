@@ -23,6 +23,11 @@ public class BrandAdminController {
         return new ResponseEntity<>(response, HttpStatus.valueOf(response.getStatusCode()));
     }
 
+    @GetMapping("/status/{id}")
+    public ResponseEntity<?> updateStatus(@PathVariable Long id) {
+        ServiceResponse response = brandService.updateStatus(id);
+        return new ResponseEntity<>(response, HttpStatus.valueOf(response.getStatusCode()));
+    }
 
     @PostMapping
     public ResponseEntity<?> addBrand(BrandAdminRequestDto dto) {
@@ -37,9 +42,9 @@ public class BrandAdminController {
         return new ResponseEntity<>(response, HttpStatus.valueOf(response.getStatusCode()));
     }
 
-    @GetMapping("/status/{id}")
-    public ResponseEntity<?> updateStatus(@PathVariable Long id) {
-        ServiceResponse response = brandService.updateStatus(id);
+    @DeleteMapping("/delete/{id}")
+    public ResponseEntity<?> deleteBrand(@PathVariable Long id) {
+        ServiceResponse response = brandService.deleteBrandById(id);
         return new ResponseEntity<>(response, HttpStatus.valueOf(response.getStatusCode()));
     }
 }

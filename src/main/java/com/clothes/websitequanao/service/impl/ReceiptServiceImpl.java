@@ -28,6 +28,7 @@ import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.concurrent.atomic.AtomicInteger;
 
 import static com.clothes.websitequanao.common.Consts.FunctionStatus.ON;
 import static com.clothes.websitequanao.common.Consts.ReceiptType.*;
@@ -151,15 +152,22 @@ public class ReceiptServiceImpl implements ReceiptService {
                     List<ProductEntity> productChild = productRepo.findAllByParentIdAndActive(productReceiptDto.getId(), ON);
                     // product child dto
                     List<ProductReceiptDto> productReceiptDtoChild = new ArrayList<>();
+
+                    AtomicInteger totalChildQuantity = new AtomicInteger(0);
+
                     // covert entity -> dto
                     if (productChild.size() > 0) {
                         productChild.forEach(child -> {
                             productReceiptDtoChild.add(convertEntity(child));
+                            totalChildQuantity.addAndGet(child.getQuantity());
                         });
 
                     }
+
+                    int total = totalChildQuantity.get(); // Lấy giá trị cuối cùng
                     productReceiptDto.setCheckChildren(productReceiptDtoChild.size() > 0 ? true : false);
                     productReceiptDto.setProductChild(productReceiptDtoChild);
+                    productReceiptDto.setQuantity(total); // Đặt tổng quantity của sản phẩm con vào quantity của sản phẩm cha
                 }
                 result.add(productReceiptDto);
             }

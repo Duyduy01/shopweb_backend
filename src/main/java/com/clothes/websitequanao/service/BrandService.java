@@ -12,7 +12,7 @@ public interface BrandService {
 
     ServiceResponse addOrEditBrand(BrandAdminRequestDto dto);
 //
-//    ServiceResponse deleteBrand(Long brandId);
+    ServiceResponse deleteBrandById(Long id);
 
     //update status
 
