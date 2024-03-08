@@ -34,6 +34,10 @@ public interface SpecialityRepo extends JpaRepository<SpecialityEntity, Long> {
 
     boolean existsByFeaturedKey(String type);
 
+    boolean existsAllByDescription(String typeName);
+
+    boolean existsAllByDescriptionAndIdNot(String typeName, Long id);
+
     @Query(value = "select max(s.featuredPosition) from SpecialityEntity s  ")
     Integer getPositionMax();
 

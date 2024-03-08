@@ -27,14 +27,12 @@ public class BillAdminController {
 
     @GetMapping
     public ResponseEntity<?> getAllBill() {
-
         ServiceResponse response = billService.getAllAdmin();
         return new ResponseEntity<>(response, HttpStatus.valueOf(response.getStatusCode()));
     }
 
     @GetMapping("/{id}")
     public ResponseEntity<?> getBillById(@PathVariable Long id) {
-
         ServiceResponse response = billService.getBillDetailById(id);
         return new ResponseEntity<>(response, HttpStatus.valueOf(response.getStatusCode()));
     }

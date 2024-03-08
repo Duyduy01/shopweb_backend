@@ -227,8 +227,8 @@ public class SpecialityServiceImpl implements SpecialityService {
         try {
             boolean checkTypeName = specialityRepo.existsByFeaturedName(dto.getFeaturedName().trim());
             boolean checkType = specialityRepo.existsByFeaturedKey(dto.getFeaturedKey().trim());
-            if (checkTypeName) return ServiceResponse.RESPONSE_ERROR("Tên loại đặc trưng đã tồn tại");
-            if (checkType) return ServiceResponse.RESPONSE_ERROR("Mã loại đặc trưng tồn tại");
+            if (checkTypeName) return ServiceResponse.RESPONSE_ERROR(dto.getFeaturedName().trim());
+            if (checkType) return ServiceResponse.RESPONSE_ERROR(dto.getFeaturedKey().trim());
             SpecialityEntity specialityEntity = SpecialityEntity.builder()
                     .featuredName(dto.getFeaturedName().trim())
                     .featuredNumber(1)
@@ -256,6 +256,8 @@ public class SpecialityServiceImpl implements SpecialityService {
     @Override
     public ServiceResponse addSpeOld(SpeNewRequestDto dto) {
         try {
+            boolean checkSpeDescription = specialityRepo.existsAllByDescription(dto.getDescription());
+            if (checkSpeDescription) return ServiceResponse.RESPONSE_ERROR("Mô tả đặc trưng đã tồn tại!");
             SpecialityEntity speOld = specialityRepo.getOneByType(dto.getFeaturedKey());
 
             SpecialityEntity result = SpecialityEntity.builder()
@@ -281,6 +283,14 @@ public class SpecialityServiceImpl implements SpecialityService {
     public ServiceResponse editSpeOld(SpeNewRequestDto dto) {
         try {
             SpecialityEntity speCurrent = specialityRepo.findById(dto.getId()).orElseThrow(() -> new NullPointerException("Spe do not exist"));
+
+            // Kiểm tra nếu mô tả đã thay đổi
+            if (!dto.getDescription().equals(speCurrent.getDescription())) {
+                boolean checkDescription = specialityRepo.existsAllByDescriptionAndIdNot(dto.getDescription(), dto.getId());
+                if (checkDescription) {
+                    return ServiceResponse.RESPONSE_ERROR(dto.getDescription());
+                }
+            }
 
             speCurrent.setDescription(dto.getDescription());
             speCurrent.setActive(dto.getActive());

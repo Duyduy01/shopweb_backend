@@ -15,9 +15,11 @@ import com.clothes.websitequanao.service.BillService;
 import com.clothes.websitequanao.utils.CodeUtil;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
+import org.springframework.messaging.simp.SimpMessagingTemplate;
 import org.springframework.security.authentication.AnonymousAuthenticationToken;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
@@ -43,6 +45,8 @@ public class BillServiceImpl implements BillService {
 
     private final UserRepo userRepo;
 
+    private final UserRoleRepo userRoleRepo;
+
     private final ProductRepo productRepo;
 
     private final BillRepo billRepo;
@@ -54,7 +58,6 @@ public class BillServiceImpl implements BillService {
     private final ProductSpecialityRepo productSpecialityRepo;
 
     private final SendEmailService sendEmailService;
-
 
     @Override
     public ServiceResponse getAll() {
@@ -393,6 +396,8 @@ public class BillServiceImpl implements BillService {
             if (billEntity == null || billEntityList.size() == 0)
                 return ServiceResponse.RESPONSE_ERROR("Vui lòng chọn các sản phẩm mà bạn muốn mua trước khi đặt hàng");
             billEntity.setBillDate(LocalDateTime.now());
+            billEntity.setShippingCost(dto.getShippingCost());
+            billEntity.setInvoiceValue(dto.getInvoiceValue());
             billEntity.setStatus(BILL_CONFIRM);
             billEntity.setNote(dto.getNote());
 //            billEntity.setShip(billEntity.getTotalPrice().compareTo(BigDecimal.valueOf(700000)) <= 0 ? BigDecimal.valueOf(30000) : BigDecimal.valueOf(0));
@@ -423,7 +428,8 @@ public class BillServiceImpl implements BillService {
             userRepo.save(user);
             productRepo.saveAll(productEntities);
 
-            return ServiceResponse.RESPONSE_SUCCESS("Đặt hàng thành công");
+
+            return ServiceResponse.RESPONSE_SUCCESS(billEntity.getId());
 
         } catch (Exception e) {
             e.printStackTrace();
@@ -555,6 +561,8 @@ public class BillServiceImpl implements BillService {
                     .userId(user.getId())
 //                    .ship(ship)
                     .totalPrice(totalPrice)
+                    .shippingCost(dto.getShippingCost())
+                    .invoiceValue(dto.getInvoiceValue())
                     .status(BILL_CONFIRM)
                     .address(dto.getAddressDetail())
                     .note(dto.getNote())
@@ -633,6 +641,8 @@ public class BillServiceImpl implements BillService {
                 billResponseDto.setDeliveryTime(be.getDeliveryTime());
                 billResponseDto.setStatus(be.getStatus());
                 billResponseDto.setTotalPrice(be.getTotalPrice());
+                billResponseDto.setShippingCost(be.getShippingCost());
+                billResponseDto.setInvoiceValue(be.getInvoiceValue());
                 billResponseDto.setBillId(be.getId());
 //                billResponseDto.setShip(be.getShip());
                 ///
@@ -762,6 +772,8 @@ public class BillServiceImpl implements BillService {
             result.setBillDate(re.getBillDate());
             result.setDeliveryTime(re.getDeliveryTime());
             result.setTotalPrice(re.getTotalPrice());
+            result.setShippingCost(re.getShippingCost());
+            result.setInvoiceValue(re.getInvoiceValue());
             result.setStatus(re.getStatus());
             result.setNote(re.getNote());
 //            result.setShip(re.getShip());
@@ -875,7 +887,11 @@ public class BillServiceImpl implements BillService {
 
             // user cancel
             Long userId = getUserId();
-            billEntity.setStaffId(userId);
+            UserRole userrole = userRoleRepo.findByUserId(userId);
+            if(userrole.getRoleId() == 4 || userrole.getRoleId() == 2) {
+                billEntity.setStaffId(userId);
+            }
+//            billEntity.setStaffId(userId); BNM,
             billRepo.save(billEntity);
 
             UserEntity user = userRepo.findById(userId).orElse(null);

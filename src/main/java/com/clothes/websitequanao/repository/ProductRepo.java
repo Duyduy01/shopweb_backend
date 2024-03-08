@@ -11,10 +11,12 @@ import java.util.Optional;
 public interface ProductRepo extends JpaRepository<ProductEntity, Long> {
     List<ProductEntity> findByBrandId(Long brandId);
 
-
+    //product
     List<ProductEntity> findAllByParentId(Long parentId);
 
     boolean existsByParentId(Long parentId);
+
+    boolean existsAllByProductNameAndIdNot(String productName, Long id);
 
 //    boolean existsByParentIdAndSizeAndColor(Long parentId, String size, String color);
 

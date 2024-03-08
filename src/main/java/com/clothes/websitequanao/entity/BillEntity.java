@@ -21,8 +21,9 @@ public class BillEntity extends BaseEnity {
     private String code;
     private Long userId;
     private LocalDateTime billDate;
-//    private BigDecimal ship;
     private BigDecimal totalPrice;
+    private BigDecimal shippingCost;
+    private BigDecimal invoiceValue;
     private LocalDateTime deliveryTime;
     private Integer status;
     private Long staffId;

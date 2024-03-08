@@ -11,6 +11,7 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -44,6 +45,8 @@ public class CategoryServiceImpl implements CategoryService {
     public ServiceResponse addOrEditCate(CateAdminRequestDto dto) {
         try {
             if (dto.getId() == null) {
+                boolean checkCategoryName = categoryRepo.existsAllByCategoryName(dto.getCategoryName());
+                if (checkCategoryName) return ServiceResponse.RESPONSE_ERROR(dto.getCategoryName());
                 CategoryEntity categoryEntity = CategoryEntity.builder()
                         .categoryName(dto.getCategoryName())
                         .status(dto.getStatus())
@@ -54,12 +57,25 @@ public class CategoryServiceImpl implements CategoryService {
 
                 categoryEntity.setBoolActive(categoryEntity.getStatus() == 1 ? true : false);
 
-                return ServiceResponse.RESPONSE_SUCCESS("Thêm loại sản phẩm thành công", categoryEntity);
+                // Tạo một mảng rỗng và đặt vào categoryEntity
+                List<CategoryEntity> emptyListChild = Collections.emptyList();
+                categoryEntity.setListChild(emptyListChild);
+
+
+                return ServiceResponse.RESPONSE_SUCCESS("Thêm danh mục sản phẩm thành công", categoryEntity);
 
             } else {
                 CategoryEntity categoryEntity = categoryRepo.findById(dto.getId()).orElse(null);
                 if (categoryEntity == null)
                     return ServiceResponse.RESPONSE_ERROR("Lỗi loại sản phẩm muốn sửa không tồn tại");
+
+                // Kiểm tra nếu category name đã thay đổi
+                if (!dto.getCategoryName().equals(categoryEntity.getCategoryName())) {
+                    boolean checkCategoryName = categoryRepo.existsAllByCategoryNameAndIdNot(dto.getCategoryName(), dto.getId());
+                    if (checkCategoryName) {
+                        return ServiceResponse.RESPONSE_ERROR(dto.getCategoryName());
+                    }
+                }
                 categoryEntity.setCategoryName(dto.getCategoryName());
                 categoryEntity.setStatus(dto.getStatus());
                 categoryEntity.setContent(dto.getContent());
@@ -153,8 +169,15 @@ public class CategoryServiceImpl implements CategoryService {
         // tìm ra category parent
         List<CategoryEntity> cateEntities = categoryRepo.findAllByParentIdAndStatus(null, USER_ACTIVE);
         cateEntities.forEach(e -> {
+            // tìm ra các sản phẩm con của sản phẩm cha
             List<CategoryEntity> categoryEntities = categoryRepo.findAllByParentIdAndStatus(e.getId(), USER_ACTIVE);
-            result.put(e.getId() + "," + e.getCategoryName(), categoryEntities);
+            // kiểm tra xem có ít nhất một sản phẩm con và có sản phẩm con nào active không
+            boolean hasActiveChild = categoryEntities.stream()
+                    .anyMatch(child -> child.getStatus() == USER_ACTIVE);
+            // nếu có ít nhất một sản phẩm con và có sản phẩm con nào active, thì thêm vào kết quả
+            if (hasActiveChild) {
+                result.put(e.getId() + "," + e.getCategoryName(), categoryEntities);
+            }
         });
         return ServiceResponse.RESPONSE_SUCCESS(result);
     }

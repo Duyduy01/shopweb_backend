@@ -23,6 +23,7 @@ import org.springframework.web.multipart.MultipartFile;
 
 import javax.persistence.EntityManager;
 import javax.persistence.Query;
+import java.math.BigDecimal;
 import java.util.*;
 import java.util.stream.Collectors;
 
@@ -78,36 +79,36 @@ public class ProductServiceImpl implements ProductService {
     @Override
     public ServiceResponse productOptionHome(Integer option) {
         try {
-            List<ProductEntity> result = new ArrayList<>();
-
-            StringBuffer sql = new StringBuffer("");
-            // new
+            String sqlQuery;
             if (option == 1) {
-                sql.append("Select p.* from product p where parent_id is null and active = :active order by p.created_date desc ");
+                sqlQuery = "SELECT p.* FROM product p WHERE parent_id IS NULL AND active = :active ORDER BY p.created_date DESC";
             } else if (option == 2) {
-                // yeeu thich
-                sql.append("Select p.*, count(f.product_id) as favorites from product p " +
-                        " join favorite f on p.id = f.product_id where p.parent_id is null and p.active = :active " +
-                        " group by f.product_id " +
-                        " order by favorites desc ");
+                sqlQuery = "SELECT p.*, COUNT(f.product_id) AS favorites FROM product p " +
+                        "JOIN favorite f ON p.id = f.product_id WHERE p.parent_id IS NULL AND p.active = :active " +
+                        "GROUP BY f.product_id ORDER BY favorites DESC";
             } else if (option == 3) {
-                // so luong ban
-                sql.append(" select p.* ,sum(p.sold) as total_sold,  (CASE " +
-                        " WHEN p.parent_id is null THEN p.id " +
-                        "  WHEN p.parent_id is not null THEN p.parent_id " +
-                        "   END) AS product_sold " +
-                        "  from product p where p.active = :active " +
-                        " group by product_sold " +
-                        " order by total_sold desc ");
+                sqlQuery = "SELECT p.*, SUM(p.sold) AS total_sold, " +
+                        "(CASE WHEN p.parent_id IS NULL THEN p.id ELSE p.parent_id END) AS product_sold " +
+                        "FROM product p WHERE p.active = :active GROUP BY product_sold ORDER BY total_sold DESC";
             } else {
-                // giam gia
-                sql.append("Select p.* from product p where parent_id is null and active = :active and p.sale != 0 order by p.sale desc ");
+                sqlQuery = "SELECT p.* FROM product p " +
+                        "WHERE parent_id IS NULL AND active = :active AND p.sale != 0 ORDER BY p.sale DESC";
             }
-            sql.append(" Limit 0,8 ");
+            sqlQuery += " LIMIT 0,8";
 
-            Query query = entityManager.createNativeQuery(sql.toString(), ProductEntity.class);
+            Query query = entityManager.createNativeQuery(sqlQuery, ProductEntity.class);
             query.setParameter("active", ON);
-            result = query.getResultList();
+            List<ProductEntity> result = query.getResultList();
+
+            // Calculate total sold
+            for (ProductEntity product : result) {
+                Integer totalPay = productRepo.findAllByParentId(product.getId())
+                        .stream()
+                        .mapToInt(ProductEntity::getSold)
+                        .sum();
+                product.setTotalPay(totalPay);
+            }
+
             favoriteService.setFavorite(result);
             return ServiceResponse.RESPONSE_SUCCESS(result);
         } catch (Exception e) {
@@ -131,12 +132,23 @@ public class ProductServiceImpl implements ProductService {
                 if (checkProductName) return ServiceResponse.RESPONSE_ERROR("Tên sản phẩm đã tồn tại, vui lòng kiểm tra lại");
                 addProduct(dto);
                 return ServiceResponse.RESPONSE_SUCCESS("Thêm sản phẩm thành công!");
-
-
             } else {
-                editProduct(dto);
-                return ServiceResponse.RESPONSE_SUCCESS("Sửa sản phẩm thành công!");
-
+                Long productId = dto.getId();
+                String productName = dto.getProductName();
+                Optional<ProductEntity> existingProduct = productRepo.findById(productId);
+                if (existingProduct.isPresent()) {
+                    // Nếu tên sản phẩm đã thay đổi
+                    if (!productName.equals(existingProduct.get().getProductName())) {
+                        boolean checkProductName = productRepo.existsAllByProductNameAndIdNot(productName, productId);
+                        if (checkProductName) {
+                            return ServiceResponse.RESPONSE_ERROR("Tên sản phẩm đã tồn tại, vui lòng kiểm tra lại.");
+                        }
+                    }
+                    editProduct(dto);
+                    return ServiceResponse.RESPONSE_SUCCESS("Sửa sản phẩm thành công!");
+                } else {
+                    return ServiceResponse.RESPONSE_ERROR("Đã có lỗi xảy ra, vui lòng kiểm tra lại.");
+                }
             }
 
         } catch (Exception e) {
@@ -268,19 +280,55 @@ public class ProductServiceImpl implements ProductService {
 
         if(dto.getParentId() == null) {
             productCurrent.setProductName(dto.getProductName());
-            productCurrent.setPrice(dto.getPrice());
-            productCurrent.setPriceSell(dto.getPriceSell());
-            productCurrent.setProductCode(dto.getProductCode());
+//            productCurrent.setPrice(dto.getPrice());
+//            productCurrent.setPriceSell(dto.getPriceSell());
+//            productCurrent.setProductCode(dto.getProductCode());
             productCurrent.setDescription(dto.getDescription());
             productCurrent.setContent(dto.getContent());
             productCurrent.setBrandId(dto.getBrandId());
-            productCurrent.setCategoryId(dto.getCategoryId());
             productCurrent.setActive(dto.getActive());
             productCurrent.setType(NORMAL);
 
             // Đặt active cho child
+            Long category = dto.getCategoryId();
+            BigDecimal price = dto.getPrice();
+            BigDecimal priceSell = dto.getPriceSell();
+            String productCode = dto.getProductCode();
             List<ProductEntity> productChildren = productRepo.findAllByParentId(dto.getId());
             if (!productChildren.isEmpty()) {
+//                log.info("Category: {}", dto.getBrandId());
+//                log.info("Updated Product Children: {}", productCurrent.getCategoryId());
+                if(productCode != null && !productCode.equals(productCurrent.getProductCode())) {
+                    productCurrent.setProductCode(productCode);
+                    // Cập nhật product code cho tất cả sản phẩm con
+                    productChildren.forEach(e -> {
+                        e.setProductCode(productCode);
+                    });
+                }
+                if(price != null && !price.equals(productCurrent.getPrice())) {
+                    productCurrent.setPrice(price);
+                    // Cập nhật price cho tất cả sản phẩm con
+                    productChildren.forEach(e -> {
+                        e.setPrice(price);
+                    });
+                }
+                if(priceSell != null && !priceSell.equals(productCurrent.getPriceSell())) {
+                    productCurrent.setPriceSell(priceSell);
+                    // Cập nhật price sell cho tất cả sản phẩm con
+                    productChildren.forEach(e -> {
+                        e.setPriceSell(priceSell);
+                    });
+                }
+                if(category != null && !category.equals(productCurrent.getCategoryId())) {
+                    productCurrent.setCategoryId(category);
+                    // Cập nhật category cho tất cả sản phẩm con
+                    productChildren.forEach(e -> {
+                        e.setCategoryId(category);
+                    });
+                }
+                productChildren.forEach(e -> {
+                    e.setBrandId(dto.getBrandId());
+                });
                 productChildren.forEach(e -> {
                     e.setActive(dto.getActive());
                 });
@@ -429,6 +477,7 @@ public class ProductServiceImpl implements ProductService {
         String getParentByChild = "( " + getRight + QUERY_FILTER_CHILD + " and p2.parent_id is null  )";
 
         StringBuffer QUERY_RESULT = new StringBuffer(getParent + "UNION" + getParentByChild);
+        System.out.println(QUERY_RESULT);
 
         /*order*/
         String sort = dto.get("sort").get(0);
@@ -484,6 +533,7 @@ public class ProductServiceImpl implements ProductService {
         Query query = entityManager.createNativeQuery(QUERY_RESULT.toString(), ProductEntity.class);
 
         List<ProductEntity> entities = query.getResultList();
+
         int limit = Integer.valueOf(dto.get("limit").get(0));
         if (entities == null) return ServiceResponse.RESPONSE_SUCCESS(1);
 
@@ -827,6 +877,12 @@ public class ProductServiceImpl implements ProductService {
             StringBuffer join = new StringBuffer(" join ");
             if (dto.get(key) == null || dto.get(key).isEmpty()) {
                 continue;
+            } else if ("color".equals(key) || "size".equals(key)) {
+                // Điều kiện cho các feature của child (color và size)
+                String param = dto.get(key).stream()
+                        .map(i -> String.valueOf(i))
+                        .collect(Collectors.joining(",", "(", ")"));
+                buffer.append(join.append("(" + QUERY + " where ps.featured_id in " + param + ") " + key + " on " + key + ".id = p.id"));
             } else {
                 String param = dto.get(key).stream().
                         map(i -> String.valueOf(i)).

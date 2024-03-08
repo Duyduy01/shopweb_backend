@@ -7,4 +7,9 @@ import java.util.List;
 
 public interface BrandRepo extends JpaRepository<BrandEntity,Long> {
     List<BrandEntity> findAllByStatus(int status);
+
+    //check
+    boolean existsAllByBrandName(String brandName);
+
+    boolean existsAllByBrandNameAndIdNot(String brandName, Long id);
 }

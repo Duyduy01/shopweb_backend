@@ -159,6 +159,7 @@ public class WebsiteQuanAoApplication implements CommandLineRunner {
     @Bean
     public CorsConfigurationSource corsConfigurationSource() {
         CorsConfiguration configuration = new CorsConfiguration();
+//        configuration.setAllowedOrigins(Arrays.asList("*"));
         configuration.setAllowedOriginPatterns(Collections.singletonList("*")); // <-- you may change "*"
         configuration.setAllowedMethods(Arrays.asList("HEAD", "GET", "POST", "PUT", "DELETE", "PATCH"));
         configuration.setAllowCredentials(true);

@@ -14,6 +14,11 @@ public interface CategoryRepo extends JpaRepository<CategoryEntity, Long> {
 
     CategoryEntity findByCategoryName(String cateName);
 
+    //check
+    boolean existsAllByCategoryName(String categoryName);
+
+    boolean existsAllByCategoryNameAndIdNot(String categoryName, Long id);
+
     @Query(value = "select c.id from CategoryEntity c where c.parentId = :parentId")
     List<Long> getAllIdByParentId(long parentId);
 }

@@ -66,11 +66,23 @@ public class BrandServiceImpl implements BrandService {
     public ServiceResponse addOrEditBrand(BrandAdminRequestDto dto) {
         try {
             if (dto.getId() == null) {
+                boolean checkBrandName = brandRepo.existsAllByBrandName(dto.getBrandName());
+                if (checkBrandName) return ServiceResponse.RESPONSE_ERROR(dto.getBrandName());
                 BrandEntity result = addBrand(dto);
                 return ServiceResponse.RESPONSE_SUCCESS("Thêm thương hiệu thành công", result);
             } else {
                 BrandEntity result = brandRepo.findById(dto.getId()).orElse(null);
                 if (result == null) return ServiceResponse.RESPONSE_ERROR("Thương hiệu không tồn tại");
+
+                String newBrandName = dto.getBrandName();
+
+                // Nếu tên thương hiệu đã thay đổi
+                if (!newBrandName.equals(result.getBrandName())) {
+                    boolean checkBrandName = brandRepo.existsAllByBrandNameAndIdNot(newBrandName, dto.getId());
+                    if (checkBrandName) {
+                        return ServiceResponse.RESPONSE_ERROR(newBrandName);
+                    }
+                }
 
                 result.setBrandName(dto.getBrandName());
                 result.setStatus(dto.getStatus());
@@ -150,7 +162,7 @@ public class BrandServiceImpl implements BrandService {
 
             // update status of product
             updateStatusProduct(brandEntity.getId(), brandEntity.getStatus());
-            return ServiceResponse.RESPONSE_SUCCESS("Thay đổi trạng thái của thương hiệu thành công");
+            return ServiceResponse.RESPONSE_SUCCESS("Thay đổi trạng thái của thương hiệu thành công", brandEntity);
         } catch (Exception e) {
             e.printStackTrace();
             log.error("error update stautus brand");

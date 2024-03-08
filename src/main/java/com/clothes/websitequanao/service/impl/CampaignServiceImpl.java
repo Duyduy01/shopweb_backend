@@ -45,7 +45,7 @@ public class CampaignServiceImpl implements CampaignService {
     @Override
     public ServiceResponse getAllCampaignAdmin() {
         try {
-            List<CampaignEntity> result = campaignRepo.findAllByOrderByCreatedDate();
+            List<CampaignEntity> result = campaignRepo.findAllByOrderByCreatedDateDesc();
             return ServiceResponse.RESPONSE_SUCCESS(result);
         } catch (Exception e) {
             e.printStackTrace();

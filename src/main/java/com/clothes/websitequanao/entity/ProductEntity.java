@@ -43,6 +43,9 @@ public class ProductEntity extends BaseEnity {
     private String search;
 
     @Transient
+    private int totalPay;
+
+    @Transient
     private Boolean checkChildren;
 
     @Transient

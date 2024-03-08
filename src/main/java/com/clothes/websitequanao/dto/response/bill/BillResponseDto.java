@@ -19,8 +19,9 @@ public class BillResponseDto {
     private String userName;
     private LocalDateTime billDate;
     private LocalDateTime deliveryTime;
-    private BigDecimal ship;
     private BigDecimal totalPrice;
+    private BigDecimal shippingCost;
+    private BigDecimal invoiceValue;
 
     private int status;
     private String staffName;

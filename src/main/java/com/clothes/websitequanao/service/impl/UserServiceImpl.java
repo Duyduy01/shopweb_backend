@@ -93,9 +93,8 @@ public class UserServiceImpl implements UserService {
     @Override
     public ServiceResponse getAllUserManu() {
         try {
-
             List<Long> userId = userRoleRepo.getByRoleId(MANUFACTURE_ID);
-            List<UserEntity> result = userRepo.findAllById(userId);
+            List<UserEntity> result = userRepo.findAllByIdInAndStatus(userId, USER_ACTIVE);
             return ServiceResponse.RESPONSE_SUCCESS(result);
         } catch (Exception e) {
             e.printStackTrace();
