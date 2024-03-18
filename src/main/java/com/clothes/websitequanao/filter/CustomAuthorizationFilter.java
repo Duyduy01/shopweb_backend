@@ -35,7 +35,7 @@ public class CustomAuthorizationFilter extends OncePerRequestFilter {
 
     static {
         REQUEST_NO_AUTHEN = (asList(
-                "/api/v1/user/**", "/api/v2/user/**", urlDistrict, urlWard, urlGetCity));
+                "/api/v1/user/**", "/api/v2/user/**", "/connect/**", urlDistrict, urlWard, urlGetCity));
 
 
     }

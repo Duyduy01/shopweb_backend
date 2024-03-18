@@ -7,6 +7,10 @@ public class Consts {
 
     public static final String SHOP_NAME = "Cửa hàng bán quần áo";
 
+    public class IpAdress {
+        public static final String IPADRESS = "http://localhost:8080";
+    }
+
     public class Status {
         public static final String ACTIVE = "ACTIVE";
     }

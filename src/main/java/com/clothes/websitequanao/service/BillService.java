@@ -43,6 +43,7 @@ public interface BillService {
 
     ServiceResponse getBillDetailById(Long id);
 
+    ServiceResponse getNewBillAdded(Long id);
 
     ServiceResponse verifyBill(Long id);
 

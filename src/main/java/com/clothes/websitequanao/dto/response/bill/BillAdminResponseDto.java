@@ -17,6 +17,7 @@ public class BillAdminResponseDto {
     private LocalDateTime deliveryTime;
     private BigDecimal ship;
     private BigDecimal totalPrice;
+    private BigDecimal invoiceValue;
     private int status;
     private String staffId;
     private String note;

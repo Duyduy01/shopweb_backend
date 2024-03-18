@@ -11,6 +11,8 @@ import org.springframework.web.socket.config.annotation.*;
 import org.springframework.web.socket.handler.TextWebSocketHandler;
 import org.springframework.web.socket.server.support.HttpSessionHandshakeInterceptor;
 
+import static com.clothes.websitequanao.common.Consts.IpAdress.IPADRESS;
+
 
 @Configuration
 @EnableWebSocketMessageBroker
@@ -18,14 +20,15 @@ public class WebsocketConfiguration implements WebSocketMessageBrokerConfigurer 
 
     @Override
     public void registerStompEndpoints(StompEndpointRegistry registry) {
-        registry.addEndpoint("/portfolio").withSockJS();
+        registry.addEndpoint("/connect").setAllowedOriginPatterns(IPADRESS).withSockJS();
     }
 
     @Override
     public void configureMessageBroker(MessageBrokerRegistry config) {
-        config.setApplicationDestinationPrefixes("/app");
-        config.enableSimpleBroker("/topic", "/queue");
+        config.setApplicationDestinationPrefixes("/ws");
+        config.enableSimpleBroker("/topic");
     }
+
 
 //    @Override
 //    public void registerWebSocketHandlers(WebSocketHandlerRegistry registry) {

@@ -29,6 +29,7 @@ import org.springframework.web.filter.CorsFilter;
 import java.util.*;
 import java.util.stream.Collectors;
 
+import static com.clothes.websitequanao.common.Consts.IpAdress.IPADRESS;
 import static com.clothes.websitequanao.common.Consts.MAP_PARAM_SECURITIES_CONFIG;
 import static com.clothes.websitequanao.common.Consts.SystemParamKey.*;
 import static java.lang.Integer.parseInt;
@@ -160,12 +161,9 @@ public class WebsiteQuanAoApplication implements CommandLineRunner {
     public CorsConfigurationSource corsConfigurationSource() {
         CorsConfiguration configuration = new CorsConfiguration();
 //        configuration.setAllowedOrigins(Arrays.asList("*"));
-        configuration.setAllowedOriginPatterns(Collections.singletonList("*")); // <-- you may change "*"
+        configuration.setAllowedOriginPatterns(Collections.singletonList(IPADRESS)); // <-- you may change "*"
         configuration.setAllowedMethods(Arrays.asList("HEAD", "GET", "POST", "PUT", "DELETE", "PATCH"));
         configuration.setAllowCredentials(true);
-//        configuration.setAllowedHeaders(Arrays.asList(
-//                "Accept", "Origin", "Content-Type", "Depth", "User-Agent", "If-Modified-Since,",
-//                "Cache-Control", "Authorization", "X-Req", "X-File-Size", "X-Requested-With", "X-File-Name"));
         configuration.setAllowedHeaders(Arrays.asList("*"));
         UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
         source.registerCorsConfiguration("/**", configuration);

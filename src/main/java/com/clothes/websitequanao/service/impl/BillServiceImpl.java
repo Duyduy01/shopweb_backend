@@ -587,7 +587,7 @@ public class BillServiceImpl implements BillService {
 
             productRepo.save(product);
 
-            return ServiceResponse.RESPONSE_SUCCESS("Đặt hàng thành công");
+            return ServiceResponse.RESPONSE_SUCCESS(billEntity.getId());
 
         } catch (Exception e) {
             e.printStackTrace();
@@ -740,7 +740,7 @@ public class BillServiceImpl implements BillService {
                         .billDate(e.getBillDate())
                         .deliveryTime(e.getDeliveryTime())
 //                        .ship(e.getShip())
-                        .totalPrice(e.getTotalPrice())
+                        .invoiceValue(e.getInvoiceValue())
                         .note(e.getNote())
                         .status(e.getStatus())
                         .payment(e.getPayment())
@@ -757,6 +757,41 @@ public class BillServiceImpl implements BillService {
             log.error("error get all bill");
             e.printStackTrace();
             return ServiceResponse.RESPONSE_ERROR("error get all bill");
+        }
+    }
+
+    @Override
+    public ServiceResponse getNewBillAdded(Long id) {
+        try {
+            BillEntity billAdded = billRepo.findById(id).orElse(null);
+            if (billAdded == null) return ServiceResponse.RESPONSE_ERROR("error receipt does exist");
+
+            String userName = userRepo.findById(billAdded.getUserId()).get().getFullName();
+
+            String staffName = "";
+            if (billAdded.getStaffId() != null)
+                staffName = userRepo.findById(billAdded.getStaffId()).get().getFullName();
+
+            BillAdminResponseDto dto = BillAdminResponseDto.builder()
+                    .id(billAdded.getId())
+                    .code(billAdded.getCode())
+                    .billDate(billAdded.getBillDate())
+                    .deliveryTime(billAdded.getDeliveryTime())
+//                        .ship(e.getShip())
+                    .invoiceValue(billAdded.getInvoiceValue())
+                    .note(billAdded.getNote())
+                    .status(billAdded.getStatus())
+                    .payment(billAdded.getPayment())
+                    .userId(userName)
+                    .staffId(staffName)
+                    .checkBill(billAdded.getStatus() == 1 ? true : false)
+                    .build();
+
+            return ServiceResponse.RESPONSE_SUCCESS(dto);
+        } catch (Exception e) {
+            log.error("error get new bill added");
+            e.printStackTrace();
+            return ServiceResponse.RESPONSE_ERROR("error get new bill added");
         }
     }
 
