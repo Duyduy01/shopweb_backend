@@ -8,7 +8,8 @@ public class Consts {
     public static final String SHOP_NAME = "Cửa hàng bán quần áo";
 
     public class IpAdress {
-        public static final String IPADRESS = "http://localhost:8080";
+        public static final String IPADRESS = "https://app-s-fe-3e9aa24d0752.herokuapp.com";
+//        public static final String IPADRESS = "http://localhost:8080";
     }
 
     public class Status {
