@@ -60,7 +60,8 @@ public class ProductServiceImpl implements ProductService {
     private final RateRepo rateRepo;
 
 
-    private static final String QUERY = "Select p.* from product p left join product_featured ps on p.id = ps.product_id";
+    private static final String QUERY = "SELECT p.* FROM product p LEFT JOIN product_featured ps ON p.id = ps.product_id ";
+    private static final String QUERY1 = "SELECT p.* FROM product p LEFT JOIN product_featured pf ON p.id = pf.product_id ";
 
     @Override
     public ServiceResponse getProductNew() {
@@ -129,7 +130,8 @@ public class ProductServiceImpl implements ProductService {
 
             if (dto.getId() == null) {
                 boolean checkProductName = productRepo.existsAllByProductName(dto.getProductName());
-                if (checkProductName) return ServiceResponse.RESPONSE_ERROR("Tên sản phẩm đã tồn tại, vui lòng kiểm tra lại");
+                if (checkProductName)
+                    return ServiceResponse.RESPONSE_ERROR("Tên sản phẩm đã tồn tại, vui lòng kiểm tra lại");
                 addProduct(dto);
                 return ServiceResponse.RESPONSE_SUCCESS("Thêm sản phẩm thành công!");
             } else {
@@ -183,7 +185,7 @@ public class ProductServiceImpl implements ProductService {
         // để ảnh lên firebase
         String img = (String) fileService.upload(dto.getImg());
         long id; // dùng để lưu id sản phẩm vừa tạo
-        if(dto.getParentId() == null) {
+        if (dto.getParentId() == null) {
             ProductEntity productEntity = ProductEntity.builder()
                     .productName(dto.getProductName())
                     .price(dto.getPrice())
@@ -278,7 +280,7 @@ public class ProductServiceImpl implements ProductService {
         ProductEntity productCurrent = this.productRepo.findById(dto.getId()).orElse(null);
         if (productCurrent == null) throw new NullPointerException();
 
-        if(dto.getParentId() == null) {
+        if (dto.getParentId() == null) {
             productCurrent.setProductName(dto.getProductName());
 //            productCurrent.setPrice(dto.getPrice());
 //            productCurrent.setPriceSell(dto.getPriceSell());
@@ -298,28 +300,28 @@ public class ProductServiceImpl implements ProductService {
             if (!productChildren.isEmpty()) {
 //                log.info("Category: {}", dto.getBrandId());
 //                log.info("Updated Product Children: {}", productCurrent.getCategoryId());
-                if(productCode != null && !productCode.equals(productCurrent.getProductCode())) {
+                if (productCode != null && !productCode.equals(productCurrent.getProductCode())) {
                     productCurrent.setProductCode(productCode);
                     // Cập nhật product code cho tất cả sản phẩm con
                     productChildren.forEach(e -> {
                         e.setProductCode(productCode);
                     });
                 }
-                if(price != null && !price.equals(productCurrent.getPrice())) {
+                if (price != null && !price.equals(productCurrent.getPrice())) {
                     productCurrent.setPrice(price);
                     // Cập nhật price cho tất cả sản phẩm con
                     productChildren.forEach(e -> {
                         e.setPrice(price);
                     });
                 }
-                if(priceSell != null && !priceSell.equals(productCurrent.getPriceSell())) {
+                if (priceSell != null && !priceSell.equals(productCurrent.getPriceSell())) {
                     productCurrent.setPriceSell(priceSell);
                     // Cập nhật price sell cho tất cả sản phẩm con
                     productChildren.forEach(e -> {
                         e.setPriceSell(priceSell);
                     });
                 }
-                if(category != null && !category.equals(productCurrent.getCategoryId())) {
+                if (category != null && !category.equals(productCurrent.getCategoryId())) {
                     productCurrent.setCategoryId(category);
                     // Cập nhật category cho tất cả sản phẩm con
                     productChildren.forEach(e -> {
@@ -375,7 +377,7 @@ public class ProductServiceImpl implements ProductService {
         deleteProductSpecial(productCurrent.getId());
         // thêm lại đặc trung mới
         List<ProductSpeciality> productSpecialities = new ArrayList<>();
-        if(dto.getSpecialityId() != null && !dto.getSpecialityId().isEmpty()) {
+        if (dto.getSpecialityId() != null && !dto.getSpecialityId().isEmpty()) {
             dto.getSpecialityId().forEach(e -> {
                 ProductSpeciality productSpeciality = ProductSpeciality.builder()
                         .productId(productCurrent.getId())
@@ -461,23 +463,11 @@ public class ProductServiceImpl implements ProductService {
     @Override
     public ServiceResponse filterProduct(Map<String, List<String>> dto) {
 
-        String getLeft = "Select p.*";
-        String getRight = "Select p2.*";
         StringBuffer QUERY_FILTER = new
-                StringBuffer(" from  product p left join product_featured ps on p.id = ps.product_id ");
-
-        StringBuffer QUERY_FILTER_CHILD = new
-                StringBuffer(" from  product p left join product_featured ps on p.id = ps.product_id " +
-                "join product p2 on p2.id = p.parent_id");
-        QUERY_FILTER = createQueryFilter(QUERY_FILTER, dto);
-        QUERY_FILTER_CHILD = createQueryFilter(QUERY_FILTER_CHILD, dto);
-
-
-        String getParent = "( " + getLeft + QUERY_FILTER + " and p.parent_id is null )";
-        String getParentByChild = "( " + getRight + QUERY_FILTER_CHILD + " and p2.parent_id is null  )";
-
-        StringBuffer QUERY_RESULT = new StringBuffer(getParent + "UNION" + getParentByChild);
-        System.out.println(QUERY_RESULT);
+                StringBuffer(QUERY1);
+        StringBuffer QUERY_RESULT = createQueryFilter1(QUERY_FILTER, dto);
+//        System.out.println(QUERY_RESULT.toString());
+//        System.out.println(QUERY_RESULT);
 
         /*order*/
         String sort = dto.get("sort").get(0);
@@ -497,7 +487,30 @@ public class ProductServiceImpl implements ProductService {
 
         Query query = entityManager.createNativeQuery(QUERY_RESULT.toString(), ProductEntity.class);
 
+//        String QUERY_RESULT2 = "SELECT p.* " +
+//                "FROM product p " +
+//                "LEFT JOIN product_featured pf ON p.id = pf.product_id " +
+//                "WHERE p.category_id = 12 " +
+//                "AND pf.featured_id = 9 " +
+//                "AND p.active = 1 " +
+//                "AND ( " +
+//                "    (p.parent_id IS NULL AND pf.featured = 'color') " +
+//                "    OR (p.parent_id IS NOT NULL AND pf.featured = 'size') " +
+//                ")";
+//
+//        Query query2 = entityManager.createNativeQuery(QUERY_RESULT2, ProductEntity.class);
+//        List<ProductEntity> result2 = query2.getResultList();
+//        System.out.println(result2);
+
         List<ProductEntity> result = query.getResultList();
+
+//        calculateTotalSoldForParent(result);
+        for (ProductEntity product : result) {
+            List<ProductEntity> children = productRepo.findAllByParentId(product.getId());
+            int totalSold = children.stream().mapToInt(ProductEntity::getSold).sum();
+            product.setTotalPay(totalSold);
+        }
+
         favoriteService.setFavorite(result);
         return ServiceResponse.RESPONSE_SUCCESS(result);
     }
@@ -731,9 +744,6 @@ public class ProductServiceImpl implements ProductService {
         }
     }
 
-    // product detail
-
-
     // check color and size
     private void findColorAndSizeProduct(List<ProductEntity> productEntityList, ProductDetailResponseDto result) {
 
@@ -804,7 +814,7 @@ public class ProductServiceImpl implements ProductService {
 //                if (e == firstNonParentColor) {
 //                    colorConvert.add(0, e);
 //                } else {
-                    colorConvert.add(e);
+                colorConvert.add(e);
 //                }
             });
         } else {
@@ -869,7 +879,7 @@ public class ProductServiceImpl implements ProductService {
         return result;
     }
 
-    // tạo query
+    //     tạo query
     private StringBuffer createQueryFilter(StringBuffer buffer, Map<String, List<String>> dto) {
         Set<String> keys = specialityRepo.getKey();
 
@@ -890,6 +900,7 @@ public class ProductServiceImpl implements ProductService {
                 buffer.append(join.append("(" + QUERY + " where ps.featured_id in " + param + ") " + key + " on " + key + ".id = p.id"));
             }
         }
+//        System.out.println(buffer);
         buffer.append(" where 1 = 1 ");
         if (dto.get("category").size() == 1 && !dto.get("category").isEmpty()) {
             String queryCate = "";
@@ -906,21 +917,119 @@ public class ProductServiceImpl implements ProductService {
             buffer.append(queryCate);
         }
 
-        if (dto.get("brand").size() == 1 && !dto.get("brand").isEmpty()) {
-            String queryBrand = "";
-            BrandEntity brandEntity = brandRepo.findById(Long.parseLong(dto.get("brand").get(0))).orElse(null);
-            if (brandEntity != null) {
-                queryBrand += " and p.brand_id = " + dto.get("brand").get(0);
-            }
-            buffer.append(queryBrand);
-        }
+//        if (dto.get("brand").size() == 1 && !dto.get("brand").isEmpty()) {
+//            String queryBrand = "";
+//            BrandEntity brandEntity = brandRepo.findById(Long.parseLong(dto.get("brand").get(0))).orElse(null);
+//            if (brandEntity != null) {
+//                queryBrand += " and p.brand_id = " + dto.get("brand").get(0);
+//            }
+//            buffer.append(queryBrand);
+//        }
         buffer.append(" and p.active = 1 ");
-
 
         return buffer;
     }
 
-//    //    kiểm tra nếu có chọn đặc trung thì true không false
+    private StringBuffer createQueryFilter1(StringBuffer buffer, Map<String, List<String>> dto) {
+
+        Set<String> keys = specialityRepo.getKey();
+        int aliasCounter = 1;
+
+        for (String key : keys) {
+            if (dto.get(key) == null || dto.get(key).isEmpty()) {
+                continue;
+            } else if("color".equals(key) || "size".equals(key)) {
+                String param = dto.get(key).stream()
+                        .map(i -> String.valueOf(i))
+                        .collect(Collectors.joining(",", "(", ")"));
+                buffer.append("INNER JOIN (SELECT parent_id FROM product pc JOIN product_featured pfc ON pc.id = pfc.product_id WHERE featured_id in ").append(param).append(") ").append("AS subquery").append(aliasCounter).append(" ON p.id = subquery").append(aliasCounter).append(".parent_id ");
+            } else {
+                String param = dto.get(key).stream()
+                        .map(i -> String.valueOf(i))
+                        .collect(Collectors.joining(",", "(", ")"));
+                buffer.append("INNER JOIN (" + QUERY1 + "WHERE EXISTS (SELECT 1 FROM product_featured pf WHERE pf.product_id = p.id AND pf.featured_id in ").append(param).append(")) ").append("AS subquery").append(aliasCounter).append(" ON p.id = subquery").append(aliasCounter).append(".id ");
+            }
+            aliasCounter++;
+        }
+
+        buffer.append("where 1 = 1 ");
+        if (dto.get("category").size() == 1 && !dto.get("category").isEmpty()) {
+            String queryCate = "";
+            CategoryEntity categoryEntity = categoryRepo.findById(Long.parseLong(dto.get("category").get(0))).orElse(null);
+            if (categoryEntity.getParentId() != null) {
+                queryCate += " AND p.category_id = " + dto.get("category").get(0);
+            } else {
+                List<Long> cateIdChildren = categoryRepo.getAllIdByParentId(categoryEntity.getId());
+                String paramCate = cateIdChildren.stream().
+                        map(i -> String.valueOf(i)).
+                        collect(Collectors.joining(",", "(", ")"));
+                queryCate += " AND p.category_id in " + paramCate;
+            }
+            buffer.append(queryCate);
+        }
+
+        buffer.append(" AND p.active = 1 AND p.parent_id is null GROUP BY p.id");
+
+        System.out.println(buffer);
+
+        return buffer;
+
+//        List<String> conditions = new ArrayList<>();
+//
+//        // Xây dựng các điều kiện lọc dựa trên dữ liệu từ frontend
+//        for (Map.Entry<String, List<String>> entry : dto.entrySet()) {
+//            String key = entry.getKey();
+//            List<String> values = entry.getValue();
+//
+//            // Bỏ qua các thuộc tính không mong muốn
+//            if ("sort".equals(key) || "limit".equals(key) || "page".equals(key)) {
+//                continue;
+//            }
+//
+//            if (!values.isEmpty()) {
+//                StringBuffer condition = new StringBuffer();
+//                String param = values.stream()
+//                        .map(i -> String.valueOf(i))
+//                        .collect(Collectors.joining(",", "(", ")"));
+//                if (("color".equals(key))) {
+//                    condition.append("JOIN (SELECT parent_id FROM product pc JOIN product_featured pfc ON pc.id = pfc.product_id WHERE featured_id in ").append(param).append(" AS subquery ON p.id = subquery.parent_id").append(")");
+//                } else if (("size".equals(key))) {
+//                    condition.append("JOIN (SELECT parent_id FROM product pc JOIN product_featured pfc ON pc.id = pfc.product_id WHERE featured_id in ").append(param).append(" AS subquery ON p.id = subquery.parent_id").append(")");
+//                } else if (("category".equals(key))) {
+//                    String queryCate = "";
+//                    CategoryEntity categoryEntity = categoryRepo.findById(Long.parseLong(dto.get("category").get(0))).orElse(null);
+//                    if (categoryEntity.getParentId() != null) {
+//                        queryCate += "WHERE p.category_id = " + dto.get("category").get(0);
+//                    } else {
+//                        List<Long> cateIdChildren = categoryRepo.getAllIdByParentId(categoryEntity.getId());
+//                        String paramCate = cateIdChildren.stream().
+//                                map(i -> String.valueOf(i)).
+//                                collect(Collectors.joining(",", "(", ")"));
+//                        queryCate += "WHERE p.category_id in " + paramCate;
+//                    }
+//                    condition.append(queryCate);
+//                } else {
+//                    condition.append("EXISTS (SELECT 1 FROM product_featured pf WHERE pf.product_id = p.id AND pf.featured_id in ").append(param).append(")");
+//                }
+//
+//
+////                condition.append(")");
+//                conditions.add(condition.toString());
+//            }
+//        }
+//
+//        if (!conditions.isEmpty()) {
+//            buffer.append(String.join(" AND ", conditions));
+//        } else {
+//            buffer.append("WHERE 1 = 1"); // Nếu không có điều kiện lọc nào được áp dụng, trả về tất cả sản phẩm
+//        }
+//
+//        buffer.append(" AND p.active = 1 AND p.parent_id is null GROUP BY p.id");
+//
+//        return buffer;
+    }
+
+    //    //    kiểm tra nếu có chọn đặc trung thì true không false
 //    private Map<Long, Boolean> checkSpecial(List<SpecialityEntity> specialityEntities,
 //                                            List<Long> selectId) {
 //
@@ -941,6 +1050,7 @@ public class ProductServiceImpl implements ProductService {
 //        return results;
 //
 //    }
+
     private Map<Long, List<Object>> checkSpecial(List<SpecialityEntity> specialityEntities, List<Long> selectId) {
         Map<Long, List<Object>> results = new HashMap<>();
 

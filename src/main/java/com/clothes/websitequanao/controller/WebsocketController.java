@@ -28,7 +28,7 @@ public class WebsocketController {
     Future<?> submittedTask;
 
     @MessageMapping("/billAdded")
-    @SendTo("/topic/messages")
+    @SendTo("/topic/new-billAdded")
     public ResponseEntity<?> billAdded(@Payload BillidDto billidDto) {
         Long billId = billidDto.getBillId();
         System.out.println("billAdded function is called...");

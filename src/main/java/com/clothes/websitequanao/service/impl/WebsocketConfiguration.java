@@ -1,15 +1,8 @@
 package com.clothes.websitequanao.service.impl;
 
-import com.clothes.websitequanao.exception.HttpHandshakeInterceptor;
-import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.messaging.simp.config.MessageBrokerRegistry;
-import org.springframework.web.socket.TextMessage;
-import org.springframework.web.socket.WebSocketHandler;
-import org.springframework.web.socket.WebSocketSession;
 import org.springframework.web.socket.config.annotation.*;
-import org.springframework.web.socket.handler.TextWebSocketHandler;
-import org.springframework.web.socket.server.support.HttpSessionHandshakeInterceptor;
 
 import static com.clothes.websitequanao.common.Consts.IpAdress.IPADRESS;
 

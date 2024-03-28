@@ -21,7 +21,7 @@ import java.util.Map;
 @AllArgsConstructor
 @Slf4j
 public class ProductEntity extends BaseEnity {
-
+    private Long id;
     private String productName;
 
     private String productCode;
